@@ -1,0 +1,6 @@
+{
+  "id": "SimplCommerce.Module.PaymentCreditCard",
+  "name": "Credit Card Payment",
+  "isBundledWithHost": true,
+  "version": "1.0.0"
+}

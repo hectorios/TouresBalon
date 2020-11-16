@@ -1,0 +1,23 @@
+﻿<label>Tarjeta de Crédito</label>
+<form asp-area="PaymentCreditCard" asp-controller="CreditCard" asp-action="CreditCardCheckout" method="POST" id="checkout-payment" class="form-horizontal">
+    <div>
+        <div>
+            <br>
+            Nombre en Tarjeta:<br>
+            <input type="text" id="ccnombre" name="ccnombre" value="" />
+            <br>
+            Número Tarjeta:<br>
+            <input type="text" id="ccnumber" name="ccnumber" value="" />
+            <br>
+            CCV:<br>
+            <input type="text" id="ccv" name="CCV" value="" />
+            <br>
+            Fecha de Expiración:<br>
+            <input type="date" id="ccdate" name="ccdate" value="" />
+            <br>
+            Número de Cuotas:<br>
+            <input type="number" id="cuotas" name="cuotas" value="" />
+            <button type="submit" class="btn btn-order">Pagar</button>
+        </div>
+    </div>
+</form>
