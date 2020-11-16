@@ -2,11 +2,11 @@
     <div class="page-header">
         <div class="row">
             <div class="col-md-8">
-                <h2 ng-if="!vm.isEditMode">{{::vm.translate.get('Create Product')}}</h2>
-                <h2 ng-if="vm.isEditMode">{{::vm.translate.get('Edit Product')}} {{vm.product.name}}</h2>
+                <h2 ng-if="!vm.isEditMode">Crear Producto</h2>
+                <h2 ng-if="vm.isEditMode">Editar {{vm.product.name}}</h2>
             </div>
             <div class="col-md-4 text-right">
-                <a ng-if="vm.isEditMode" ui-sref="product-clone({id: vm.product.id})" class="btn btn-primary"><span class="glyphicon glyphicon-copy"></span> {{::vm.translate.get('Clone Product')}}</a>
+                <a ng-if="vm.isEditMode" ui-sref="product-clone({id: vm.product.id})" class="btn btn-primary"><span class="glyphicon glyphicon-copy"></span> Clonar Producto</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 </ul>
             </div>
             <uib-tabset>
-                <uib-tab index="0" heading="{{::vm.translate.get('General Information')}}">
+                <uib-tab index="0" heading="Detalles">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Nombre Evento</label>
                         <div class="col-sm-10">
@@ -78,16 +78,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" ng-model="vm.product.stockTrackingIsEnabled">
-                                </label>
-                            </div>
+                        <label class="col-sm-2 control-label">Miniatura</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="file" ngf-select ng-model="vm.thumbnailImage" name="thumbnailImage" ngf-accept="'image/*'">
+                            <img ngf-src="vm.thumbnailImage" ngf-resize="{width: 100, height: 100, quality: 0.9}">
+                            <img ng-show="!vm.thumbnailImage && vm.product.thumbnailImageUrl" ng-src="{{vm.product.thumbnailImageUrl}}" style="width: 100px; height: 100px" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Product Images')}}</label>
+                        <label class="col-sm-2 control-label">Imagen Producto</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="file" ngf-select ng-model="vm.productImages" ngf-multiple="true" name="productImages" ngf-accept="'image/*'">
                             <span class="product-image-edit" ng-repeat="image in vm.product.productImages">
@@ -102,34 +101,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Product Documents')}}</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="file" ngf-select ng-model="vm.productDocuments" ngf-multiple="true" name="productDocuments" ngf-accept="'.pdf,.doc'">
-                            <span class="product-file-edit" ng-repeat="doc in vm.product.productDocuments">
-                                <a target="_blank" href="{{doc.mediaUrl}}">{{doc.caption}}</a>
-                                <button type="button" ng-click="vm.removeDocument(doc)" class="btn btn-link" aria-label="Remove">
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
-                            </span>
-                            <span class="product-file-edit" ng-repeat="file in vm.productDocuments">
-                                <span>{{file.name}}</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" ng-model="vm.product.isFeatured">{{::vm.translate.get('Is Featured')}}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" ng-model="vm.product.isPublished">{{::vm.translate.get('Is Published')}}
+                                    <input type="checkbox" ng-model="vm.product.isPublished">Publicado?
                                 </label>
                             </div>
                         </div>
@@ -147,199 +122,8 @@
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" ng-model="vm.product.isAllowToOrder">{{::vm.translate.get('Is Allowed To Order')}}
-                                </label>
+                                    <input type="checkbox" ng-model="vm.product.isAllowToOrder">Disponible?                               </label>
                             </div>
-                        </div>
-                    </div>
-                </uib-tab>
-                <uib-tab index="1" heading="{{::vm.translate.get('Product Variations')}}">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Available Options')}}</label>
-                        <div class="col-sm-10">
-                            <div class="form-group row">
-                                <div class="col-md-3">
-                                    <select class="form-control" ng-model="vm.addingOption" ng-options="opt as opt.name for opt in vm.options"></select>
-                                </div>
-                                <button class="btn btn-default" ng-disabled="!vm.addingOption" ng-click="vm.addOption()">{{::vm.translate.get('Add Option')}}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-show="vm.product.options.length > 0">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Option Values')}}</label>
-                    </div>
-                    <div class="form-group" ng-show="vm.product.options.length > 0">
-                        <div class="col-sm-offset-1 col-sm-11">
-                            <div class="form-group" ng-repeat="option in vm.product.options">
-                                <label class="col-sm-1 control-label">{{option.name}}</label>
-                                <div class="col-sm-11">
-                                    <div class="form-group row">
-                                        <div class="col-md-6">
-                                            <md-chips ng-model="option.values"
-                                                      md-transform-chip="vm.newOptionValue($chip)"
-                                                      placeholder="Enter a {{option.name}}"
-                                                      delete-button-label="Remove {{option.name}}"
-                                                      delete-hint="Press delete to remove {{option.name}}"
-                                                      secondary-placeholder="+{{option.name}}">
-                                                <md-chip-template>
-                                                    <span>
-                                                        {{$chip.key}}
-                                                    </span>
-                                                </md-chip-template>
-                                            </md-chips>
-                                        </div>
-                                        <product-option-display-directive model-id="option_{{option.id}}" title="Configure Display" option="option"></product-option-display-directive>
-                                        <button class="btn btn-default" data-toggle="modal" data-target="#option_{{option.id}}">{{::vm.translate.get('Configure Display')}}</button>
-                                        <button class="btn btn-default" ng-click="vm.deleteOption(option)">{{::vm.translate.get('Delete Option')}}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-if="!vm.isEditMode" ng-show="vm.product.options.length > 0">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button class="btn btn-default" ng-click="vm.generateOptionCombination()">{{::vm.translate.get('Generate Combinations')}}</button>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Product Variations')}}</label>
-                        <div class="col-sm-10">
-                            <table class="table table-striped">
-                                <tr>
-                                    <th class="col-md-2">{{::vm.translate.get('Option Combinations')}}</th>
-                                    <th class="col-md-1">{{::vm.translate.get('SKU')}}</th>
-                                    <th class="col-md-1">{{::vm.translate.get('GTIN')}}</th>
-                                    <th class="col-md-1">{{::vm.translate.get('Price')}}</th>
-                                    <th class="col-md-1">{{::vm.translate.get('Old Price')}}</th>
-                                    <th class="col-md-2">{{::vm.translate.get('Thumbnails')}}</th>
-                                    <th class="col-md-3">{{::vm.translate.get('Images')}}</th>
-                                    <th class="col-md-1">{{::vm.translate.get('Actions')}}</th>
-                                </tr>
-                                <tr ng-repeat="variation in vm.product.variations">
-                                    <td>{{variation.name}}</td>
-                                    <td>
-                                        <input id="{{variation.normalizedName}}Sku" type="text" maxlength="100" class="form-control" ng-model="variation.sku" />
-                                    </td>
-                                    <td>
-                                        <input id="{{variation.normalizedName}}Gtin" type="text" maxlength="100" class="form-control" ng-model="variation.gtin" />
-                                    </td>
-                                    <td>
-                                        <div class="input-number">
-                                            <input id="{{variation.normalizedName}}Price" type="text" decimal maxlength="10" required class="form-control" ng-model="variation.price" />
-                                            <label for="{{variation.normalizedName}}Price" class="form-control">{{variation.price | number}}</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-number">
-                                            <input id="{{variation.normalizedName}}OldPrice" type="text" decimal maxlength="10" class="form-control" ng-model="variation.oldPrice" />
-                                            <label for="{{variation.normalizedName}}OldPrice" class="form-control">{{variation.oldPrice | number}}</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="file" ngf-select ng-model="variation.newThumbnailImage" name="variationThumbnailImage" ngf-accept="'image/*'">
-                                        <img ngf-src="variation.newThumbnailImage" ngf-resize="{width:50, height: 50, quality: 0.9}">
-                                        <img ng-show="!variation.newThumbnailImage && variation.thumbnailImageUrl" ng-src="{{variation.thumbnailImageUrl}}" style="width: 50px; height: 50px" />
-                                    </td>
-                                    <td>
-                                        <input class="form-control" type="file" ngf-select ng-model="variation.newImages" ngf-multiple="true" name="variationImages" ngf-accept="'image/*'">
-                                        <span class="product-image-edit" ng-repeat="image in variation.imageUrls">
-                                            <img ng-src="{{image}}" style="width: 50px; height: 50px" />
-                                        </span>
-                                        <span ng-repeat="image in variation.newImages">
-                                            <img ngf-src="image" ngf-resize="{width: 50, height: 50, quality: 0.9}">
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <button ng-click="vm.deleteVariation(variation)" type="button" class="btn">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr ng-show="vm.product.options.length > 0">
-                                    <td class="variation-form" colspan="8">
-                                        <ng-form name="addingVariationForm">
-                                            <table class="table">
-                                                <tr>
-                                                    <td class="col-md-2">
-                                                        <div ng-repeat="option in vm.product.options">
-                                                            <div>
-                                                                <select class="form-control" ng-model="vm.addingVariation[option.name]"
-                                                                        ng-options="value.key as value.key for value in option.values | filter: vm.filterAddedOptionValue"></select>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="col-md-1">
-                                                        <input id="addingVariationSku" type="text" maxlength="100" class="form-control" ng-model="vm.addingVariation.sku" />
-                                                    </td>
-                                                    <td class="col-md-1">
-                                                        <input id="addingVariationGtin" type="text" maxlength="100" class="form-control" ng-model="vm.addingVariation.gtin" />
-                                                    </td>
-                                                    <td class="col-md-1">
-                                                        <div class="input-number">
-                                                            <input id="addingVariationPrice" type="text" decimal maxlength="10" class="form-control" ng-model="vm.addingVariation.price" />
-                                                            <label for="addingVariationPrice" class="form-control">{{vm.addingVariation.price | number}}</label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="col-md-1">
-                                                        <div class="input-number">
-                                                            <input id="addingVariationOldPrice" type="text" decimal maxlength="10" class="form-control" ng-model="vm.addingVariation.oldPrice" />
-                                                            <label for="addingVariationOldPrice" class="form-control">{{vm.addingVariation.oldPrice | number}}</label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="col-md-2"></td>
-                                                    <td class="col-md-3"></td>
-                                                    <td class="col-md-1"><button type="button" class="btn btn-primary" ng-disabled="!vm.isAddVariationFormValid()" ng-click="vm.addVariation()"><span class="glyphicon glyphicon-plus"></span></button></td>
-                                                </tr>
-                                            </table>
-                                        </ng-form>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </uib-tab>
-                <uib-tab index="2" heading="{{::vm.translate.get('Product Attributes')}}">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Product Templates')}}</label>
-                        <div class="col-sm-10">
-                            <div class="form-group row">
-                                <div class="col-md-3">
-                                    <select class="form-control" ng-model="vm.product.template" ng-options="template as template.name for template in vm.productTemplates"></select>
-                                </div>
-                                <button class="btn btn-default" ng-disabled="!vm.product.template" ng-click="vm.applyTemplate()">{{::vm.translate.get('Apply')}}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Available Attributes')}}</label>
-                        <div class="col-sm-10">
-                            <div class="form-group row">
-                                <div class="col-md-3">
-                                    <select class="form-control" ng-model="vm.addingAttribute" ng-options="attr as attr.name group by attr.groupName for attr in vm.attributes"></select>
-                                </div>
-                                <button class="btn btn-default" ng-disabled="!vm.addingAttribute" ng-click="vm.addAttribute()">{{::vm.translate.get('Add Attribute')}}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Product Attributes')}}</label>
-                        <div class="col-sm-10">
-                            <table class="table table-striped">
-                                <tr>
-                                    <th>{{::vm.translate.get('Attribute Name')}}</th>
-                                    <th>{{::vm.translate.get('Value')}}</th>
-                                    <th>{{::vm.translate.get('Actions')}}</th>
-                                </tr>
-                                <tr ng-repeat="attr in vm.product.attributes">
-                                    <td>{{attr.name}}</td>
-                                    <td><input type="text" class="form-control" ng-model="attr.value" /></td>
-                                    <td>
-                                        <button ng-click="vm.deleteAttribute(attr)" type="button" class="btn">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </table>
                         </div>
                     </div>
                 </uib-tab>
@@ -368,45 +152,11 @@
                         </tr>
                     </table>
                 </uib-tab>
-                <uib-tab index="5" heading="{{::vm.translate.get('Cross-sell Products')}}">
-                    <product-selection-directive model-id="productCrossSellSelector" title="Add cross-sell products" is-visible-individually="true" selected-products="vm.product.crossSellProducts"></product-selection-directive>
-                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#productCrossSellSelector">{{::vm.translate.get('Manage Cross-sell Products')}}</button></p>
-                    <table class="table table-striped">
-                        <tr>
-                            <th>{{::vm.translate.get('Name')}}</th>
-                            <th class="text-center">{{::vm.translate.get('Is Published')}}</th>
-                        </tr>
-                        <tr ng-repeat="product in vm.product.crossSellProducts">
-                            <td>{{product.name}}</td>
-                            <td class="text-center"><i ng-attr-class="{{product.isPublished && 'fa fa-circle' || 'fa fa-circle-o'}}"></i></td>
-                        </tr>
-                    </table>
-                </uib-tab>
-                <uib-tab index="6" heading="{{::vm.translate.get('SEO')}}">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Meta Title')}}</label>
-                        <div class="col-sm-10">
-                            <input name="metaTitle" ng-model="vm.product.metaTitle" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Meta Keywords')}}</label>
-                        <div class="col-sm-10">
-                            <textarea name="metaKeywords" ng-model="vm.product.metaKeywords" class="form-control" rows="2"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{::vm.translate.get('Meta Description')}}</label>
-                        <div class="col-sm-10">
-                            <textarea name="metaDescription" ng-model="vm.product.metaDescription" class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                </uib-tab>
             </uib-tabset>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" ng-disabled="productForm.$invalid" ng-click="vm.save()"><span class="glyphicon glyphicon-ok"></span>{{::vm.translate.get('Save')}}</button>
-                    <button ui-sref="product" class="btn btn-default">{{::vm.translate.get('Cancel')}}</button>
+                    <button class="btn btn-primary" ng-disabled="productForm.$invalid" ng-click="vm.save()"><span class="glyphicon glyphicon-ok"></span>Guardar</button>
+                    <button ui-sref="product" class="btn btn-default">Cancelar</button>
                 </div>
             </div>
         </form>

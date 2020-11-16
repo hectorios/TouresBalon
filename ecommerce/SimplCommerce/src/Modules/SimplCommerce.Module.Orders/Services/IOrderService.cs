@@ -14,8 +14,6 @@ namespace SimplCommerce.Module.Orders.Services
 
         void CancelOrder(Order order);
 
-        Task<decimal> GetTax(long cartId, string countryId, long stateOrProvinceId, string zipCode);
-
         Task<OrderTaxAndShippingPriceVm> UpdateTaxAndShippingPrices(long cartId, TaxAndShippingPriceRequestVm model);
     }
 }

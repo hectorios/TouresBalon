@@ -202,9 +202,12 @@ namespace SimplCommerce.Module.Orders.Services
                     return Result.Fail<Order>($"There are only {cartItem.Product.StockQuantity} items available for {cartItem.Product.Name}");
                 }
 
+                var productPrice = cartItem.Product.Price;
+
                 var orderItem = new OrderItem
                 {
                     Product = cartItem.Product,
+                    ProductPrice = productPrice,
                     Quantity = cartItem.Quantity
                 };
 
@@ -258,10 +261,13 @@ namespace SimplCommerce.Module.Orders.Services
 
                 foreach (var cartItem in cart.Items.Where(x => x.Product.VendorId == vendorId))
                 {
-                    
+
+                    var productPrice = cartItem.Product.Price;
+
                     var orderItem = new OrderItem
                     {
                         Product = cartItem.Product,
+                        ProductPrice = productPrice,
                         Quantity = cartItem.Quantity
                     };
 
@@ -312,21 +318,6 @@ namespace SimplCommerce.Module.Orders.Services
                     item.Product.StockQuantity = item.Product.StockQuantity + item.Quantity;
                 }
             }
-        }
-
-        public async Task<decimal> GetTax(long cartId, string countryId, long stateOrProvinceId, string zipCode)
-        {
-            decimal taxAmount = 0;
-
-            var cartItems = _cartItemRepository.Query()
-                .Where(x => x.CartId == cartId)
-                .Select(x => new CartItemVm
-                {
-                    Quantity = x.Quantity,
-                    Price = x.Product.Price
-                }).ToList();
-
-            return taxAmount;
         }
 
         public async Task<OrderTaxAndShippingPriceVm> UpdateTaxAndShippingPrices(long cartId, TaxAndShippingPriceRequestVm model)
