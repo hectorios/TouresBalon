@@ -1,23 +1,61 @@
 ﻿<label>Tarjeta de Crédito</label>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+</script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#btnShowModal").click(function () {
+                $("#loginModal").modal('show');
+            });
+
+            $("#btnHideModal").click(function () {
+                $("#loginModal").modal('hide');
+            });
+        });
+</script>
 <form asp-area="PaymentCreditCard" asp-controller="CreditCard" asp-action="CreditCardCheckout" method="POST" id="checkout-payment" class="form-horizontal">
-    <div>
-        <div>
-            <br>
-            Nombre en Tarjeta:<br>
-            <input type="text" id="ccnombre" name="ccnombre" value="" />
-            <br>
-            Número Tarjeta:<br>
-            <input type="text" id="ccnumber" name="ccnumber" value="" />
-            <br>
-            CCV:<br>
-            <input type="text" id="ccv" name="CCV" value="" />
-            <br>
-            Fecha de Expiración:<br>
-            <input type="date" id="ccdate" name="ccdate" value="" />
-            <br>
-            Número de Cuotas:<br>
-            <input type="number" id="cuotas" name="cuotas" value="" />
-            <button type="submit" class="btn btn-order">Pagar</button>
+
+    <button id="btnShowModal" type="button" class="btn btn-order">Pagar con Tarjeta</button>
+
+    <div class="modal fade" tabindex="-1" id="loginModal"
+         data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        ×
+                    </button>
+                    <h4 class="modal-title">Servicio Tarjeta</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modalForm" name="modalForm">
+                        <div>
+                            <br>
+                            Nombre en Tarjeta:<br>
+                            <input type="text" id="ccnombre" name="ccnombre" value="" />
+                            <br>
+                            Número Tarjeta:<br>
+                            <input type="text" id="ccnumber" name="ccnumber" value="" />
+                            <br>
+                            CCV:<br>
+                            <input type="text" id="ccv" name="CCV" value="" />
+                            <br>
+                            Fecha de Expiración:<br>
+                            <input type="date" id="ccdate" name="ccdate" value="" />
+                            <br>
+                            Número de Cuotas:<br>
+                            <input type="number" id="cuotas" name="cuotas" value="" />
+                            <br><br>
+                            <button type="submit" class="btn btn-order">Pagar</button>
+                            <button id="btnHideModal" type="button" class="btn btn-default">Cancelar</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </form>
