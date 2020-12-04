@@ -45,6 +45,7 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 x.Id,
                 x.FullName,
                 x.Email,
+                x.IdNumber,
                 x.PhoneNumber
             }).ToListAsync();
 
@@ -113,6 +114,7 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                     user.Email,
                     user.FullName,
                     user.CreatedOn,
+                    user.IdNumber,
                     Roles = user.Roles.Select(x => x.Role.Name),
                     CustomerGroups = user.CustomerGroups.Select(x => x.CustomerGroup.Name)
                 });
@@ -137,6 +139,7 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
             {
                 Id = user.Id,
                 FullName = user.FullName,
+                IdNumber = user.IdNumber,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 VendorId = user.VendorId,
@@ -155,6 +158,7 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 var user = new User
                 {
                     UserName = model.Email,
+                    IdNumber = model.IdNumber,
                     Email = model.Email,
                     FullName = model.FullName,
                     PhoneNumber = model.PhoneNumber,
@@ -208,6 +212,7 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 }
 
                 user.Email = model.Email;
+                user.IdNumber = model.IdNumber;
                 user.UserName = model.Email;
                 user.FullName = model.FullName;
                 user.PhoneNumber = model.PhoneNumber;

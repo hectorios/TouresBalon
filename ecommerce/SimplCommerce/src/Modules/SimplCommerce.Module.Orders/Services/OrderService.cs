@@ -11,9 +11,7 @@ using SimplCommerce.Module.Core.Models;
 using SimplCommerce.Module.Orders.Areas.Orders.ViewModels;
 using SimplCommerce.Module.Orders.Models;
 using SimplCommerce.Module.Pricing.Services;
-using SimplCommerce.Module.ShippingPrices.Services;
 using SimplCommerce.Module.ShoppingCart.Models;
-using SimplCommerce.Module.Tax.Services;
 using SimplCommerce.Module.Orders.Events;
 using SimplCommerce.Module.ShoppingCart.Services;
 
@@ -26,9 +24,7 @@ namespace SimplCommerce.Module.Orders.Services
         private readonly ICouponService _couponService;
         private readonly IRepository<CartItem> _cartItemRepository;
         private readonly IRepository<OrderItem> _orderItemRepository;
-        private readonly ITaxService _taxService;
         private readonly ICartService _cartService;
-        private readonly IShippingPriceService _shippingPriceService;
         private readonly IRepository<UserAddress> _userAddressRepository;
         private readonly IMediator _mediator;
 
@@ -38,9 +34,7 @@ namespace SimplCommerce.Module.Orders.Services
 
             IRepository<CartItem> cartItemRepository,
             IRepository<OrderItem> orderItemRepository,
-            ITaxService taxService,
             ICartService cartService,
-            IShippingPriceService shippingPriceService,
             IRepository<UserAddress> userAddressRepository,
             IMediator mediator)
         {
@@ -49,9 +43,7 @@ namespace SimplCommerce.Module.Orders.Services
             _couponService = couponService;
             _cartItemRepository = cartItemRepository;
             _orderItemRepository = orderItemRepository;
-            _taxService = taxService;
             _cartService = cartService;
-            _shippingPriceService = shippingPriceService;
             _userAddressRepository = userAddressRepository;
             _mediator = mediator;
         }
@@ -159,14 +151,6 @@ namespace SimplCommerce.Module.Orders.Services
                 return Result.Fail<Order>(checkingDiscountResult.ErrorMessage);
             }
 
-            var validateShippingMethodResult = await ValidateShippingMethod(shippingMethodName, shippingAddress, cart);
-            if (!validateShippingMethodResult.Success)
-            {
-                return Result.Fail<Order>(validateShippingMethodResult.Error);
-            }
-
-            var shippingMethod = validateShippingMethodResult.Value;
-
             var orderBillingAddress = new OrderAddress()
             {
                 AddressLine1 = billingAddress.AddressLine1,
@@ -218,20 +202,13 @@ namespace SimplCommerce.Module.Orders.Services
                     return Result.Fail<Order>($"There are only {cartItem.Product.StockQuantity} items available for {cartItem.Product.Name}");
                 }
 
-                var taxPercent = await _taxService.GetTaxPercent(cartItem.Product.TaxClassId, shippingAddress.CountryId, shippingAddress.StateOrProvinceId, shippingAddress.ZipCode);
                 var productPrice = cartItem.Product.Price;
-                if (cart.IsProductPriceIncludeTax)
-                {
-                    productPrice = productPrice / (1 + (taxPercent / 100));
-                }
 
                 var orderItem = new OrderItem
                 {
                     Product = cartItem.Product,
                     ProductPrice = productPrice,
-                    Quantity = cartItem.Quantity,
-                    TaxPercent = taxPercent,
-                    TaxAmount = cartItem.Quantity * (productPrice * taxPercent / 100)
+                    Quantity = cartItem.Quantity
                 };
 
                 var discountedItem = checkingDiscountResult.DiscountedProducts.FirstOrDefault(x => x.Id == cartItem.ProductId);
@@ -252,8 +229,6 @@ namespace SimplCommerce.Module.Orders.Services
             order.CouponCode = checkingDiscountResult.CouponCode;
             order.CouponRuleName = cart.CouponRuleName;
             order.DiscountAmount = checkingDiscountResult.DiscountAmount;
-            order.ShippingFeeAmount = shippingMethod.Price;
-            order.ShippingMethod = shippingMethod.Name;
             order.TaxAmount = order.OrderItems.Sum(x => x.TaxAmount);
             order.SubTotal = order.OrderItems.Sum(x => x.ProductPrice * x.Quantity);
             order.SubTotalWithDiscount = order.SubTotal - checkingDiscountResult.DiscountAmount;
@@ -286,20 +261,14 @@ namespace SimplCommerce.Module.Orders.Services
 
                 foreach (var cartItem in cart.Items.Where(x => x.Product.VendorId == vendorId))
                 {
-                    var taxPercent = await _taxService.GetTaxPercent(cartItem.Product.TaxClassId, shippingAddress.CountryId, shippingAddress.StateOrProvinceId, shippingAddress.ZipCode);
+
                     var productPrice = cartItem.Product.Price;
-                    if (cart.IsProductPriceIncludeTax)
-                    {
-                        productPrice = productPrice / (1 + (taxPercent / 100));
-                    }
 
                     var orderItem = new OrderItem
                     {
                         Product = cartItem.Product,
                         ProductPrice = productPrice,
-                        Quantity = cartItem.Quantity,
-                        TaxPercent = taxPercent,
-                        TaxAmount = cartItem.Quantity * (productPrice * taxPercent / 100)
+                        Quantity = cartItem.Quantity
                     };
 
                     if (cart.IsProductPriceIncludeTax)
@@ -351,31 +320,6 @@ namespace SimplCommerce.Module.Orders.Services
             }
         }
 
-        public async Task<decimal> GetTax(long cartId, string countryId, long stateOrProvinceId, string zipCode)
-        {
-            decimal taxAmount = 0;
-
-            var cartItems = _cartItemRepository.Query()
-                .Where(x => x.CartId == cartId)
-                .Select(x => new CartItemVm
-                {
-                    Quantity = x.Quantity,
-                    Price = x.Product.Price,
-                    TaxClassId = x.Product.TaxClass.Id
-                }).ToList();
-
-            foreach (var cartItem in cartItems)
-            {
-                if (cartItem.TaxClassId.HasValue)
-                {
-                    var taxRate = await _taxService.GetTaxPercent(cartItem.TaxClassId, countryId, stateOrProvinceId, zipCode);
-                    taxAmount = taxAmount + cartItem.Quantity * cartItem.Price * taxRate / 100;
-                }
-            }
-
-            return taxAmount;
-        }
-
         public async Task<OrderTaxAndShippingPriceVm> UpdateTaxAndShippingPrices(long cartId, TaxAndShippingPriceRequestVm model)
         {
             var cart = await _cartRepository.Query().FirstOrDefaultAsync(x => x.Id == cartId);
@@ -410,24 +354,6 @@ namespace SimplCommerce.Module.Orders.Services
                 Cart = await _cartService.GetActiveCartDetails(cart.CustomerId, cart.CreatedById)
             };
 
-            cart.TaxAmount = orderTaxAndShippingPrice.Cart.TaxAmount = await GetTax(cartId, address.CountryId, address.StateOrProvinceId, address.ZipCode);
-
-            var request = new GetShippingPriceRequest
-            {
-                OrderAmount = orderTaxAndShippingPrice.Cart.OrderTotal,
-                ShippingAddress = address
-            };
-
-            orderTaxAndShippingPrice.ShippingPrices = await _shippingPriceService.GetApplicableShippingPrices(request);
-            var selectedShippingMethod = string.IsNullOrWhiteSpace(model.SelectedShippingMethodName)
-                ? orderTaxAndShippingPrice.ShippingPrices.FirstOrDefault()
-                : orderTaxAndShippingPrice.ShippingPrices.FirstOrDefault(x => x.Name == model.SelectedShippingMethodName);
-            if (selectedShippingMethod != null)
-            {
-                cart.ShippingAmount = orderTaxAndShippingPrice.Cart.ShippingAmount = selectedShippingMethod.Price;
-                cart.ShippingMethod = orderTaxAndShippingPrice.SelectedShippingMethodName = selectedShippingMethod.Name;
-            }
-
             await _cartRepository.SaveChangesAsync();
             return orderTaxAndShippingPrice;
         }
@@ -448,21 +374,5 @@ namespace SimplCommerce.Module.Orders.Services
             return couponValidationResult;
         }
 
-        private async Task<Result<ShippingPrice>> ValidateShippingMethod(string shippingMethodName, Address shippingAddress, Cart cart)
-        {
-            var applicableShippingPrices = await _shippingPriceService.GetApplicableShippingPrices(new GetShippingPriceRequest
-            {
-                OrderAmount = cart.Items.Sum(x => x.Product.Price * x.Quantity),
-                ShippingAddress = shippingAddress
-            });
-
-            var shippingMethod = applicableShippingPrices.FirstOrDefault(x => x.Name == shippingMethodName);
-            if (shippingMethod == null)
-            {
-                return Result.Fail<ShippingPrice>($"Invalid shipping method {shippingMethod}");
-            }
-
-            return Result.Ok(shippingMethod);
-        }
     }
 }

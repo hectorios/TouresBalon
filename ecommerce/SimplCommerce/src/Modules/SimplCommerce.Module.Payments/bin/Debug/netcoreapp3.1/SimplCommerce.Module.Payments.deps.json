@@ -2489,8 +2489,7 @@
       "SimplCommerce.Module.Catalog/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0"
+          "SimplCommerce.Module.Core": "1.0.0"
         },
         "runtime": {
           "SimplCommerce.Module.Catalog.dll": {}
@@ -2519,7 +2518,6 @@
           "SimplCommerce.Module.Catalog": "1.0.0",
           "SimplCommerce.Module.Core": "1.0.0",
           "SimplCommerce.Module.Pricing": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0",
           "SimplCommerce.Module.ShoppingCart": "1.0.0"
         },
         "runtime": {
@@ -2542,33 +2540,6 @@
           "SimplCommerce.Module.Pricing.dll": {}
         }
       },
-      "SimplCommerce.Module.Shipping/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.Shipping.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.Shipping.dll": {}
-        }
-      },
-      "SimplCommerce.Module.ShippingPrices/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.ShippingPrices.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.ShippingPrices.dll": {}
-        }
-      },
       "SimplCommerce.Module.ShoppingCart/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
@@ -2581,18 +2552,6 @@
         },
         "compile": {
           "SimplCommerce.Module.ShoppingCart.dll": {}
-        }
-      },
-      "SimplCommerce.Module.Tax/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.Tax.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.Tax.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/3.1.0.0": {
@@ -5965,22 +5924,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SimplCommerce.Module.Shipping/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.ShippingPrices/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "SimplCommerce.Module.ShoppingCart/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.Tax/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

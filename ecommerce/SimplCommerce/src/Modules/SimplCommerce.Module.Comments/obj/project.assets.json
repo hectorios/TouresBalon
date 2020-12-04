@@ -3353,8 +3353,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0"
+          "SimplCommerce.Module.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SimplCommerce.Module.Catalog.dll": {}
@@ -3380,23 +3379,6 @@
         },
         "runtime": {
           "bin/placeholder/SimplCommerce.Module.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.Tax/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.Tax.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.Tax.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -9918,11 +9900,6 @@
       "type": "project",
       "path": "../SimplCommerce.Module.Core/SimplCommerce.Module.Core.csproj",
       "msbuildProject": "../SimplCommerce.Module.Core/SimplCommerce.Module.Core.csproj"
-    },
-    "SimplCommerce.Module.Tax/1.0.0": {
-      "type": "project",
-      "path": "../SimplCommerce.Module.Tax/SimplCommerce.Module.Tax.csproj",
-      "msbuildProject": "../SimplCommerce.Module.Tax/SimplCommerce.Module.Tax.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9934,24 +9911,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hecto\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj",
       "projectName": "SimplCommerce.Module.Comments",
-      "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj",
-      "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9963,14 +9941,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
             }
           }
         }
@@ -10009,7 +9987,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

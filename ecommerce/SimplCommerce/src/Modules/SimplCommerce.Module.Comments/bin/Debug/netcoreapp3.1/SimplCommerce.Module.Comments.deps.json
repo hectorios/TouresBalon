@@ -2489,8 +2489,7 @@
       "SimplCommerce.Module.Catalog/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0"
+          "SimplCommerce.Module.Core": "1.0.0"
         },
         "runtime": {
           "SimplCommerce.Module.Catalog.dll": {}
@@ -2511,18 +2510,6 @@
         },
         "compile": {
           "SimplCommerce.Module.Core.dll": {}
-        }
-      },
-      "SimplCommerce.Module.Tax/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.Tax.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.Tax.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/3.1.0.0": {
@@ -5881,11 +5868,6 @@
       "sha512": ""
     },
     "SimplCommerce.Module.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.Tax/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

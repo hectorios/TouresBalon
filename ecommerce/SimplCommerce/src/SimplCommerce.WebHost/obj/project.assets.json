@@ -2,21 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Braintree/4.9.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Abstractions": "1.0.2",
-          "NETStandard.Library": "1.6.0",
-          "Newtonsoft.Json": "9.0.1",
-          "System.Xml.XPath.XmlDocument": "4.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Braintree.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Braintree.dll": {}
-        }
-      },
       "BuildBundlerMinifier/3.0.415": {
         "type": "package",
         "build": {
@@ -50,24 +35,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/cloudscribe.Web.Pagination.dll": {}
-        }
-      },
-      "DinkToPdf/1.0.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Threading.Thread": "4.0.0"
-        },
-        "compile": {
-          "lib/netstandard1.6/DinkToPdf.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/DinkToPdf.dll": {}
         }
       },
       "Humanizer/2.7.2": {
@@ -2530,19 +2497,6 @@
           "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
-      "Stripe.net/22.8.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Stripe.net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Stripe.net.dll": {}
-        }
-      },
       "Swashbuckle.AspNetCore/5.0.0-rc4": {
         "type": "package",
         "dependencies": {
@@ -4015,18 +3969,6 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "System.Threading.Thread/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Threading.Thread.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Threading.Thread.dll": {}
-        }
-      },
       "System.Threading.ThreadPool/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4115,7 +4057,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Xml.XmlDocument.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
@@ -4147,47 +4089,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
-        }
-      },
-      "System.Xml.XPath/4.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Xml.ReaderWriter": "4.0.11"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.dll": {}
-        }
-      },
-      "System.Xml.XPath.XmlDocument/4.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Xml.ReaderWriter": "4.0.11",
-          "System.Xml.XPath": "4.0.1",
-          "System.Xml.XmlDocument": "4.0.1"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
       "SimplCommerce.Infrastructure/1.0.0": {
@@ -4233,8 +4134,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0"
+          "SimplCommerce.Module.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SimplCommerce.Module.Catalog.dll": {}
@@ -4317,24 +4217,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "SimplCommerce.Module.DinkToPdf/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "DinkToPdf": "1.0.8",
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.DinkToPdf.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.DinkToPdf.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "SimplCommerce.Module.EmailSenderSmtp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4412,7 +4294,6 @@
           "SimplCommerce.Module.Catalog": "1.0.0",
           "SimplCommerce.Module.Core": "1.0.0",
           "SimplCommerce.Module.Pricing": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0",
           "SimplCommerce.Module.ShoppingCart": "1.0.0"
         },
         "compile": {
@@ -4420,25 +4301,6 @@
         },
         "runtime": {
           "bin/placeholder/SimplCommerce.Module.Orders.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.PaymentBraintree/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Braintree": "4.9.0",
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.PaymentBraintree.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.PaymentBraintree.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -4482,63 +4344,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "SimplCommerce.Module.PaymentMomo/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.PaymentMomo.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.PaymentMomo.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.PaymentNganLuong/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.PaymentNganLuong.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.PaymentNganLuong.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.PaymentPaypalExpress/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.PaymentPaypalExpress.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.PaymentPaypalExpress.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "SimplCommerce.Module.Payments/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4552,26 +4357,6 @@
         },
         "runtime": {
           "bin/placeholder/SimplCommerce.Module.Payments.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.PaymentStripe/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0",
-          "Stripe.net": "22.8.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.PaymentStripe.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.PaymentStripe.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -4683,27 +4468,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "SimplCommerce.Module.Shipments/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Inventory": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.Shipments.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.Shipments.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "SimplCommerce.Module.Shipping/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4717,63 +4481,6 @@
         },
         "runtime": {
           "bin/placeholder/SimplCommerce.Module.Shipping.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.ShippingFree/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.ShippingFree.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.ShippingFree.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.ShippingPrices/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.ShippingPrices.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.ShippingPrices.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "SimplCommerce.Module.ShippingTableRate/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.ShippingTableRate.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.ShippingTableRate.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -4815,23 +4522,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "SimplCommerce.Module.Tax/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.Tax.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.Tax.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "SimplCommerce.Module.Vendors/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4848,41 +4538,10 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
-      },
-      "SimplCommerce.Module.WishList/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimplCommerce.Module.WishList.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimplCommerce.Module.WishList.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
   "libraries": {
-    "Braintree/4.9.0": {
-      "sha512": "brCctJRsCMd/fMvkYt4BEIr/7EL3UAIvL4ykn41u08iCPB3Ql+svUHEdvy1cdTNtKtQ/Xk3knZ+mbLVASmHCmg==",
-      "type": "package",
-      "path": "braintree/4.9.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "braintree.4.9.0.nupkg.sha512",
-        "braintree.nuspec",
-        "lib/net452/Braintree.dll",
-        "lib/netstandard1.3/Braintree.dll"
-      ]
-    },
     "BuildBundlerMinifier/3.0.415": {
       "sha512": "vhI32AdG9tdGN4Avtf/7FoH8HV2HwUM03npMaaspaSAqHDuw7SHCM43wppeRFF/364ye1Bapj3xqpVVQen3jbg==",
       "type": "package",
@@ -4927,20 +4586,6 @@
         "cloudscribe.web.pagination.2.1.11.nupkg.sha512",
         "cloudscribe.web.pagination.nuspec",
         "lib/netstandard2.0/cloudscribe.Web.Pagination.dll"
-      ]
-    },
-    "DinkToPdf/1.0.8": {
-      "sha512": "wJDlcNXjQ+OnBFwh3LBeAXgrXqlKl0RsgN60XpxEFbyqzdaG9ASb5HTXQjXQPaBguSCOrGZZESPnpcng34TEkw==",
-      "type": "package",
-      "path": "dinktopdf/1.0.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "dinktopdf.1.0.8.nupkg.sha512",
-        "dinktopdf.nuspec",
-        "lib/netstandard1.6/DinkToPdf.dll",
-        "lib/netstandard1.6/DinkToPdf.pdb",
-        "lib/netstandard1.6/DinkToPdf.xml"
       ]
     },
     "Humanizer/2.7.2": {
@@ -8237,26 +7882,6 @@
         "lib/netstandard1.3/Serilog.Sinks.RollingFile.xml",
         "serilog.sinks.rollingfile.3.3.1-dev-00767.nupkg.sha512",
         "serilog.sinks.rollingfile.nuspec"
-      ]
-    },
-    "Stripe.net/22.8.0": {
-      "sha512": "YFtNoypJcc2LwkEq/1dfmFZsUIJXuOmJ9s5yvBMhDuv4cW8oSdfoNaaG8s4aYxaaUtuBUvkAp3XzECP/+Xq9dg==",
-      "type": "package",
-      "path": "stripe.net/22.8.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Stripe.net.dll",
-        "lib/net45/Stripe.net.pdb",
-        "lib/net45/Stripe.net.xml",
-        "lib/netstandard1.2/Stripe.net.dll",
-        "lib/netstandard1.2/Stripe.net.pdb",
-        "lib/netstandard1.2/Stripe.net.xml",
-        "lib/netstandard2.0/Stripe.net.dll",
-        "lib/netstandard2.0/Stripe.net.pdb",
-        "lib/netstandard2.0/Stripe.net.xml",
-        "stripe.net.22.8.0.nupkg.sha512",
-        "stripe.net.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/5.0.0-rc4": {
@@ -12356,46 +11981,6 @@
         "version.txt"
       ]
     },
-    "System.Threading.Thread/4.0.0": {
-      "sha512": "gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
-      "type": "package",
-      "path": "system.threading.thread/4.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Threading.Thread.dll",
-        "lib/netcore50/_._",
-        "lib/netstandard1.3/System.Threading.Thread.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Threading.Thread.dll",
-        "ref/netstandard1.3/System.Threading.Thread.dll",
-        "ref/netstandard1.3/System.Threading.Thread.xml",
-        "ref/netstandard1.3/de/System.Threading.Thread.xml",
-        "ref/netstandard1.3/es/System.Threading.Thread.xml",
-        "ref/netstandard1.3/fr/System.Threading.Thread.xml",
-        "ref/netstandard1.3/it/System.Threading.Thread.xml",
-        "ref/netstandard1.3/ja/System.Threading.Thread.xml",
-        "ref/netstandard1.3/ko/System.Threading.Thread.xml",
-        "ref/netstandard1.3/ru/System.Threading.Thread.xml",
-        "ref/netstandard1.3/zh-hans/System.Threading.Thread.xml",
-        "ref/netstandard1.3/zh-hant/System.Threading.Thread.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.thread.4.0.0.nupkg.sha512",
-        "system.threading.thread.nuspec"
-      ]
-    },
     "System.Threading.ThreadPool/4.3.0": {
       "sha512": "k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
       "type": "package",
@@ -12737,82 +12322,6 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "System.Xml.XPath/4.0.1": {
-      "sha512": "UWd1H+1IJ9Wlq5nognZ/XJdyj8qPE4XufBUkAW59ijsCPjZkZe0MUzKKJFBr+ZWBe5Wq1u1d5f2CYgE93uH7DA==",
-      "type": "package",
-      "path": "system.xml.xpath/4.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Xml.XPath.dll",
-        "lib/netstandard1.3/System.Xml.XPath.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Xml.XPath.dll",
-        "ref/netstandard1.3/System.Xml.XPath.dll",
-        "ref/netstandard1.3/System.Xml.XPath.xml",
-        "ref/netstandard1.3/de/System.Xml.XPath.xml",
-        "ref/netstandard1.3/es/System.Xml.XPath.xml",
-        "ref/netstandard1.3/fr/System.Xml.XPath.xml",
-        "ref/netstandard1.3/it/System.Xml.XPath.xml",
-        "ref/netstandard1.3/ja/System.Xml.XPath.xml",
-        "ref/netstandard1.3/ko/System.Xml.XPath.xml",
-        "ref/netstandard1.3/ru/System.Xml.XPath.xml",
-        "ref/netstandard1.3/zh-hans/System.Xml.XPath.xml",
-        "ref/netstandard1.3/zh-hant/System.Xml.XPath.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.xml.xpath.4.0.1.nupkg.sha512",
-        "system.xml.xpath.nuspec"
-      ]
-    },
-    "System.Xml.XPath.XmlDocument/4.0.1": {
-      "sha512": "Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
-      "type": "package",
-      "path": "system.xml.xpath.xmldocument/4.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll",
-        "ref/netstandard1.3/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/de/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/es/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/fr/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/it/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/ja/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/ko/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/ru/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/zh-hans/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/zh-hant/System.Xml.XPath.XmlDocument.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
-        "system.xml.xpath.xmldocument.nuspec"
-      ]
-    },
     "SimplCommerce.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../SimplCommerce.Infrastructure/SimplCommerce.Infrastructure.csproj",
@@ -12848,11 +12357,6 @@
       "path": "../Modules/SimplCommerce.Module.Core/SimplCommerce.Module.Core.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.Core/SimplCommerce.Module.Core.csproj"
     },
-    "SimplCommerce.Module.DinkToPdf/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.DinkToPdf/SimplCommerce.Module.DinkToPdf.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.DinkToPdf/SimplCommerce.Module.DinkToPdf.csproj"
-    },
     "SimplCommerce.Module.EmailSenderSmtp/1.0.0": {
       "type": "project",
       "path": "../Modules/SimplCommerce.Module.EmailSenderSmtp/SimplCommerce.Module.EmailSenderSmtp.csproj",
@@ -12878,11 +12382,6 @@
       "path": "../Modules/SimplCommerce.Module.Orders/SimplCommerce.Module.Orders.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.Orders/SimplCommerce.Module.Orders.csproj"
     },
-    "SimplCommerce.Module.PaymentBraintree/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.PaymentBraintree/SimplCommerce.Module.PaymentBraintree.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.PaymentBraintree/SimplCommerce.Module.PaymentBraintree.csproj"
-    },
     "SimplCommerce.Module.PaymentCashfree/1.0.0": {
       "type": "project",
       "path": "../Modules/SimplCommerce.Module.PaymentCashfree/SimplCommerce.Module.PaymentCashfree.csproj",
@@ -12893,30 +12392,10 @@
       "path": "../Modules/SimplCommerce.Module.PaymentCoD/SimplCommerce.Module.PaymentCoD.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.PaymentCoD/SimplCommerce.Module.PaymentCoD.csproj"
     },
-    "SimplCommerce.Module.PaymentMomo/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.PaymentMomo/SimplCommerce.Module.PaymentMomo.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.PaymentMomo/SimplCommerce.Module.PaymentMomo.csproj"
-    },
-    "SimplCommerce.Module.PaymentNganLuong/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.PaymentNganLuong/SimplCommerce.Module.PaymentNganLuong.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.PaymentNganLuong/SimplCommerce.Module.PaymentNganLuong.csproj"
-    },
-    "SimplCommerce.Module.PaymentPaypalExpress/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.PaymentPaypalExpress/SimplCommerce.Module.PaymentPaypalExpress.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.PaymentPaypalExpress/SimplCommerce.Module.PaymentPaypalExpress.csproj"
-    },
     "SimplCommerce.Module.Payments/1.0.0": {
       "type": "project",
       "path": "../Modules/SimplCommerce.Module.Payments/SimplCommerce.Module.Payments.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.Payments/SimplCommerce.Module.Payments.csproj"
-    },
-    "SimplCommerce.Module.PaymentStripe/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.PaymentStripe/SimplCommerce.Module.PaymentStripe.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.PaymentStripe/SimplCommerce.Module.PaymentStripe.csproj"
     },
     "SimplCommerce.Module.Pricing/1.0.0": {
       "type": "project",
@@ -12948,30 +12427,10 @@
       "path": "../Modules/SimplCommerce.Module.Search/SimplCommerce.Module.Search.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.Search/SimplCommerce.Module.Search.csproj"
     },
-    "SimplCommerce.Module.Shipments/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.Shipments/SimplCommerce.Module.Shipments.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.Shipments/SimplCommerce.Module.Shipments.csproj"
-    },
     "SimplCommerce.Module.Shipping/1.0.0": {
       "type": "project",
       "path": "../Modules/SimplCommerce.Module.Shipping/SimplCommerce.Module.Shipping.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.Shipping/SimplCommerce.Module.Shipping.csproj"
-    },
-    "SimplCommerce.Module.ShippingFree/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.ShippingFree/SimplCommerce.Module.ShippingFree.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.ShippingFree/SimplCommerce.Module.ShippingFree.csproj"
-    },
-    "SimplCommerce.Module.ShippingPrices/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.ShippingPrices/SimplCommerce.Module.ShippingPrices.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.ShippingPrices/SimplCommerce.Module.ShippingPrices.csproj"
-    },
-    "SimplCommerce.Module.ShippingTableRate/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.ShippingTableRate/SimplCommerce.Module.ShippingTableRate.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.ShippingTableRate/SimplCommerce.Module.ShippingTableRate.csproj"
     },
     "SimplCommerce.Module.ShoppingCart/1.0.0": {
       "type": "project",
@@ -12983,20 +12442,10 @@
       "path": "../Modules/SimplCommerce.Module.StorageLocal/SimplCommerce.Module.StorageLocal.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.StorageLocal/SimplCommerce.Module.StorageLocal.csproj"
     },
-    "SimplCommerce.Module.Tax/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.Tax/SimplCommerce.Module.Tax.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.Tax/SimplCommerce.Module.Tax.csproj"
-    },
     "SimplCommerce.Module.Vendors/1.0.0": {
       "type": "project",
       "path": "../Modules/SimplCommerce.Module.Vendors/SimplCommerce.Module.Vendors.csproj",
       "msbuildProject": "../Modules/SimplCommerce.Module.Vendors/SimplCommerce.Module.Vendors.csproj"
-    },
-    "SimplCommerce.Module.WishList/1.0.0": {
-      "type": "project",
-      "path": "../Modules/SimplCommerce.Module.WishList/SimplCommerce.Module.WishList.csproj",
-      "msbuildProject": "../Modules/SimplCommerce.Module.WishList/SimplCommerce.Module.WishList.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13023,19 +12472,13 @@
       "SimplCommerce.Module.Comments >= 1.0.0",
       "SimplCommerce.Module.Contacts >= 1.0.0",
       "SimplCommerce.Module.Core >= 1.0.0",
-      "SimplCommerce.Module.DinkToPdf >= 1.0.0",
       "SimplCommerce.Module.EmailSenderSmtp >= 1.0.0",
       "SimplCommerce.Module.Inventory >= 1.0.0",
       "SimplCommerce.Module.Localization >= 1.0.0",
       "SimplCommerce.Module.News >= 1.0.0",
       "SimplCommerce.Module.Orders >= 1.0.0",
-      "SimplCommerce.Module.PaymentBraintree >= 1.0.0",
       "SimplCommerce.Module.PaymentCashfree >= 1.0.0",
       "SimplCommerce.Module.PaymentCoD >= 1.0.0",
-      "SimplCommerce.Module.PaymentMomo >= 1.0.0",
-      "SimplCommerce.Module.PaymentNganLuong >= 1.0.0",
-      "SimplCommerce.Module.PaymentPaypalExpress >= 1.0.0",
-      "SimplCommerce.Module.PaymentStripe >= 1.0.0",
       "SimplCommerce.Module.Payments >= 1.0.0",
       "SimplCommerce.Module.Pricing >= 1.0.0",
       "SimplCommerce.Module.ProductComparison >= 1.0.0",
@@ -13043,38 +12486,33 @@
       "SimplCommerce.Module.Reviews >= 1.0.0",
       "SimplCommerce.Module.SampleData >= 1.0.0",
       "SimplCommerce.Module.Search >= 1.0.0",
-      "SimplCommerce.Module.Shipments >= 1.0.0",
       "SimplCommerce.Module.Shipping >= 1.0.0",
-      "SimplCommerce.Module.ShippingFree >= 1.0.0",
-      "SimplCommerce.Module.ShippingPrices >= 1.0.0",
-      "SimplCommerce.Module.ShippingTableRate >= 1.0.0",
       "SimplCommerce.Module.ShoppingCart >= 1.0.0",
       "SimplCommerce.Module.StorageLocal >= 1.0.0",
-      "SimplCommerce.Module.Tax >= 1.0.0",
       "SimplCommerce.Module.Vendors >= 1.0.0",
-      "SimplCommerce.Module.WishList >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.0.0-rc4"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hecto\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.WebHost\\SimplCommerce.WebHost.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.WebHost\\SimplCommerce.WebHost.csproj",
       "projectName": "SimplCommerce.WebHost",
-      "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.WebHost\\SimplCommerce.WebHost.csproj",
-      "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.WebHost\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.WebHost\\SimplCommerce.WebHost.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.WebHost\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -13086,116 +12524,80 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ActivityLog\\SimplCommerce.Module.ActivityLog.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ActivityLog\\SimplCommerce.Module.ActivityLog.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ActivityLog\\SimplCommerce.Module.ActivityLog.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ActivityLog\\SimplCommerce.Module.ActivityLog.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Cms\\SimplCommerce.Module.Cms.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Cms\\SimplCommerce.Module.Cms.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Cms\\SimplCommerce.Module.Cms.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Cms\\SimplCommerce.Module.Cms.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Comments\\SimplCommerce.Module.Comments.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Contacts\\SimplCommerce.Module.Contacts.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Contacts\\SimplCommerce.Module.Contacts.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Contacts\\SimplCommerce.Module.Contacts.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Contacts\\SimplCommerce.Module.Contacts.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.DinkToPdf\\SimplCommerce.Module.DinkToPdf.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.DinkToPdf\\SimplCommerce.Module.DinkToPdf.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Inventory\\SimplCommerce.Module.Inventory.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Inventory\\SimplCommerce.Module.Inventory.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Inventory\\SimplCommerce.Module.Inventory.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Inventory\\SimplCommerce.Module.Inventory.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Localization\\SimplCommerce.Module.Localization.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Localization\\SimplCommerce.Module.Localization.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Localization\\SimplCommerce.Module.Localization.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Localization\\SimplCommerce.Module.Localization.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.News\\SimplCommerce.Module.News.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.News\\SimplCommerce.Module.News.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.News\\SimplCommerce.Module.News.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.News\\SimplCommerce.Module.News.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Orders\\SimplCommerce.Module.Orders.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Orders\\SimplCommerce.Module.Orders.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Orders\\SimplCommerce.Module.Orders.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Orders\\SimplCommerce.Module.Orders.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCashfree\\SimplCommerce.Module.PaymentCashfree.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCashfree\\SimplCommerce.Module.PaymentCashfree.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentBraintree\\SimplCommerce.Module.PaymentBraintree.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentBraintree\\SimplCommerce.Module.PaymentBraintree.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCoD\\SimplCommerce.Module.PaymentCoD.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCoD\\SimplCommerce.Module.PaymentCoD.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCashfree\\SimplCommerce.Module.PaymentCashfree.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCashfree\\SimplCommerce.Module.PaymentCashfree.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Payments\\SimplCommerce.Module.Payments.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Payments\\SimplCommerce.Module.Payments.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCoD\\SimplCommerce.Module.PaymentCoD.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentCoD\\SimplCommerce.Module.PaymentCoD.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentMomo\\SimplCommerce.Module.PaymentMomo.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentMomo\\SimplCommerce.Module.PaymentMomo.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductComparison\\SimplCommerce.Module.ProductComparison.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductComparison\\SimplCommerce.Module.ProductComparison.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentNganLuong\\SimplCommerce.Module.PaymentNganLuong.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentNganLuong\\SimplCommerce.Module.PaymentNganLuong.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductRecentlyViewed\\SimplCommerce.Module.ProductRecentlyViewed.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductRecentlyViewed\\SimplCommerce.Module.ProductRecentlyViewed.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentPaypalExpress\\SimplCommerce.Module.PaymentPaypalExpress.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentPaypalExpress\\SimplCommerce.Module.PaymentPaypalExpress.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Reviews\\SimplCommerce.Module.Reviews.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Reviews\\SimplCommerce.Module.Reviews.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentStripe\\SimplCommerce.Module.PaymentStripe.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.PaymentStripe\\SimplCommerce.Module.PaymentStripe.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.SampleData\\SimplCommerce.Module.SampleData.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.SampleData\\SimplCommerce.Module.SampleData.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Payments\\SimplCommerce.Module.Payments.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Payments\\SimplCommerce.Module.Payments.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Search\\SimplCommerce.Module.Search.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Search\\SimplCommerce.Module.Search.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Shipping\\SimplCommerce.Module.Shipping.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Shipping\\SimplCommerce.Module.Shipping.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductComparison\\SimplCommerce.Module.ProductComparison.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductComparison\\SimplCommerce.Module.ProductComparison.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductRecentlyViewed\\SimplCommerce.Module.ProductRecentlyViewed.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ProductRecentlyViewed\\SimplCommerce.Module.ProductRecentlyViewed.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.StorageLocal\\SimplCommerce.Module.StorageLocal.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.StorageLocal\\SimplCommerce.Module.StorageLocal.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Reviews\\SimplCommerce.Module.Reviews.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Reviews\\SimplCommerce.Module.Reviews.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Vendors\\SimplCommerce.Module.Vendors.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Vendors\\SimplCommerce.Module.Vendors.csproj"
             },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.SampleData\\SimplCommerce.Module.SampleData.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.SampleData\\SimplCommerce.Module.SampleData.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Search\\SimplCommerce.Module.Search.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Search\\SimplCommerce.Module.Search.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Shipments\\SimplCommerce.Module.Shipments.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Shipments\\SimplCommerce.Module.Shipments.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShippingFree\\SimplCommerce.Module.ShippingFree.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShippingFree\\SimplCommerce.Module.ShippingFree.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShippingPrices\\SimplCommerce.Module.ShippingPrices.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShippingPrices\\SimplCommerce.Module.ShippingPrices.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShippingTableRate\\SimplCommerce.Module.ShippingTableRate.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShippingTableRate\\SimplCommerce.Module.ShippingTableRate.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Shipping\\SimplCommerce.Module.Shipping.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Shipping\\SimplCommerce.Module.Shipping.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.StorageLocal\\SimplCommerce.Module.StorageLocal.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.StorageLocal\\SimplCommerce.Module.StorageLocal.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Vendors\\SimplCommerce.Module.Vendors.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Vendors\\SimplCommerce.Module.Vendors.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.WishList\\SimplCommerce.Module.WishList.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.WishList\\SimplCommerce.Module.WishList.csproj"
-            },
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
             }
           }
         }
@@ -13294,7 +12696,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -46,19 +46,13 @@
           "SimplCommerce.Module.Comments": "1.0.0",
           "SimplCommerce.Module.Contacts": "1.0.0",
           "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.DinkToPdf": "1.0.0",
           "SimplCommerce.Module.EmailSenderSmtp": "1.0.0",
           "SimplCommerce.Module.Inventory": "1.0.0",
           "SimplCommerce.Module.Localization": "1.0.0",
           "SimplCommerce.Module.News": "1.0.0",
           "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.PaymentBraintree": "1.0.0",
           "SimplCommerce.Module.PaymentCashfree": "1.0.0",
           "SimplCommerce.Module.PaymentCoD": "1.0.0",
-          "SimplCommerce.Module.PaymentMomo": "1.0.0",
-          "SimplCommerce.Module.PaymentNganLuong": "1.0.0",
-          "SimplCommerce.Module.PaymentPaypalExpress": "1.0.0",
-          "SimplCommerce.Module.PaymentStripe": "1.0.0",
           "SimplCommerce.Module.Payments": "1.0.0",
           "SimplCommerce.Module.Pricing": "1.0.0",
           "SimplCommerce.Module.ProductComparison": "1.0.0",
@@ -66,16 +60,10 @@
           "SimplCommerce.Module.Reviews": "1.0.0",
           "SimplCommerce.Module.SampleData": "1.0.0",
           "SimplCommerce.Module.Search": "1.0.0",
-          "SimplCommerce.Module.Shipments": "1.0.0",
           "SimplCommerce.Module.Shipping": "1.0.0",
-          "SimplCommerce.Module.ShippingFree": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0",
-          "SimplCommerce.Module.ShippingTableRate": "1.0.0",
           "SimplCommerce.Module.ShoppingCart": "1.0.0",
           "SimplCommerce.Module.StorageLocal": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0",
           "SimplCommerce.Module.Vendors": "1.0.0",
-          "SimplCommerce.Module.WishList": "1.0.0",
           "Swashbuckle.AspNetCore": "5.0.0-rc4",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
@@ -339,7 +327,7 @@
           "System.Threading.Tasks.Reference": "4.1.2.0",
           "System.Threading.Tasks.Extensions.Reference": "4.3.1.0",
           "System.Threading.Tasks.Parallel": "4.0.4.0",
-          "System.Threading.Thread.Reference": "4.1.2.0",
+          "System.Threading.Thread": "4.1.2.0",
           "System.Threading.ThreadPool.Reference": "4.1.2.0",
           "System.Threading.Timer.Reference": "4.1.2.0",
           "System.Transactions": "4.0.0.0",
@@ -356,7 +344,7 @@
           "System.Xml.XDocument.Reference": "4.1.2.0",
           "System.Xml.XmlDocument.Reference": "4.1.2.0",
           "System.Xml.XmlSerializer.Reference": "4.1.2.0",
-          "System.Xml.XPath.Reference": "4.1.2.0",
+          "System.Xml.XPath": "4.1.2.0",
           "System.Xml.XPath.XDocument": "4.1.2.0",
           "WindowsBase": "4.0.0.0"
         },
@@ -365,23 +353,6 @@
         },
         "compile": {
           "SimplCommerce.WebHost.dll": {}
-        }
-      },
-      "Braintree/4.9.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "12.0.2",
-          "System.Xml.XPath.XmlDocument": "4.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.3/Braintree.dll": {
-            "assemblyVersion": "4.9.0.0",
-            "fileVersion": "4.9.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.3/Braintree.dll": {}
         }
       },
       "BuildBundlerMinifier/3.0.415": {},
@@ -416,26 +387,6 @@
         },
         "compile": {
           "lib/netstandard2.0/cloudscribe.Web.Pagination.dll": {}
-        }
-      },
-      "DinkToPdf/1.0.8": {
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Threading.Thread": "4.0.0"
-        },
-        "runtime": {
-          "lib/netstandard1.6/DinkToPdf.dll": {
-            "assemblyVersion": "1.0.8.0",
-            "fileVersion": "1.0.8.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.6/DinkToPdf.dll": {}
         }
       },
       "Humanizer/2.7.2": {
@@ -2251,21 +2202,6 @@
           "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
-      "Stripe.net/22.8.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "System.Collections.Immutable": "1.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Stripe.net.dll": {
-            "assemblyVersion": "22.8.0.0",
-            "fileVersion": "22.8.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Stripe.net.dll": {}
-        }
-      },
       "Swashbuckle.AspNetCore/5.0.0-rc4": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
@@ -3133,11 +3069,6 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.3": {},
-      "System.Threading.Thread/4.0.0": {
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        }
-      },
       "System.Threading.ThreadPool/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0",
@@ -3221,42 +3152,6 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "System.Xml.XPath/4.0.1": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        }
-      },
-      "System.Xml.XPath.XmlDocument/4.0.1": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XPath": "4.0.1",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "1.0.24212.1"
-          }
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        }
-      },
       "SimplCommerce.Infrastructure/1.0.0": {
         "dependencies": {
           "Humanizer": "2.7.2",
@@ -3288,8 +3183,7 @@
       "SimplCommerce.Module.Catalog/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0"
+          "SimplCommerce.Module.Core": "1.0.0"
         },
         "runtime": {
           "SimplCommerce.Module.Catalog.dll": {}
@@ -3349,19 +3243,6 @@
           "SimplCommerce.Module.Core.dll": {}
         }
       },
-      "SimplCommerce.Module.DinkToPdf/1.0.0": {
-        "dependencies": {
-          "DinkToPdf": "1.0.8",
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.DinkToPdf.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.DinkToPdf.dll": {}
-        }
-      },
       "SimplCommerce.Module.EmailSenderSmtp/1.0.0": {
         "dependencies": {
           "MailKit": "2.2.0",
@@ -3417,7 +3298,6 @@
           "SimplCommerce.Module.Catalog": "1.0.0",
           "SimplCommerce.Module.Core": "1.0.0",
           "SimplCommerce.Module.Pricing": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0",
           "SimplCommerce.Module.ShoppingCart": "1.0.0"
         },
         "runtime": {
@@ -3425,20 +3305,6 @@
         },
         "compile": {
           "SimplCommerce.Module.Orders.dll": {}
-        }
-      },
-      "SimplCommerce.Module.PaymentBraintree/1.0.0": {
-        "dependencies": {
-          "Braintree": "4.9.0",
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.PaymentBraintree.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.PaymentBraintree.dll": {}
         }
       },
       "SimplCommerce.Module.PaymentCashfree/1.0.0": {
@@ -3469,48 +3335,6 @@
           "SimplCommerce.Module.PaymentCoD.dll": {}
         }
       },
-      "SimplCommerce.Module.PaymentMomo/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.PaymentMomo.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.PaymentMomo.dll": {}
-        }
-      },
-      "SimplCommerce.Module.PaymentNganLuong/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.PaymentNganLuong.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.PaymentNganLuong.dll": {}
-        }
-      },
-      "SimplCommerce.Module.PaymentPaypalExpress/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.PaymentPaypalExpress.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.PaymentPaypalExpress.dll": {}
-        }
-      },
       "SimplCommerce.Module.Payments/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
@@ -3522,21 +3346,6 @@
         },
         "compile": {
           "SimplCommerce.Module.Payments.dll": {}
-        }
-      },
-      "SimplCommerce.Module.PaymentStripe/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Payments": "1.0.0",
-          "Stripe.net": "22.8.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.PaymentStripe.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.PaymentStripe.dll": {}
         }
       },
       "SimplCommerce.Module.Pricing/1.0.0": {
@@ -3615,22 +3424,6 @@
           "SimplCommerce.Module.Search.dll": {}
         }
       },
-      "SimplCommerce.Module.Shipments/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Inventory": "1.0.0",
-          "SimplCommerce.Module.Orders": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.Shipments.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.Shipments.dll": {}
-        }
-      },
       "SimplCommerce.Module.Shipping/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
@@ -3642,48 +3435,6 @@
         },
         "compile": {
           "SimplCommerce.Module.Shipping.dll": {}
-        }
-      },
-      "SimplCommerce.Module.ShippingFree/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.ShippingFree.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.ShippingFree.dll": {}
-        }
-      },
-      "SimplCommerce.Module.ShippingPrices/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.ShippingPrices.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.ShippingPrices.dll": {}
-        }
-      },
-      "SimplCommerce.Module.ShippingTableRate/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Shipping": "1.0.0",
-          "SimplCommerce.Module.ShippingPrices": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.ShippingTableRate.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.ShippingTableRate.dll": {}
         }
       },
       "SimplCommerce.Module.ShoppingCart/1.0.0": {
@@ -3712,18 +3463,6 @@
           "SimplCommerce.Module.StorageLocal.dll": {}
         }
       },
-      "SimplCommerce.Module.Tax/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.Tax.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.Tax.dll": {}
-        }
-      },
       "SimplCommerce.Module.Vendors/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
@@ -3734,19 +3473,6 @@
         },
         "compile": {
           "SimplCommerce.Module.Vendors.dll": {}
-        }
-      },
-      "SimplCommerce.Module.WishList/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Catalog": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.WishList.dll": {}
-        },
-        "compile": {
-          "SimplCommerce.Module.WishList.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/3.1.0.0": {
@@ -5321,7 +5047,7 @@
         },
         "compileOnly": true
       },
-      "System.Threading.Thread.Reference/4.1.2.0": {
+      "System.Threading.Thread/4.1.2.0": {
         "compile": {
           "System.Threading.Thread.dll": {}
         },
@@ -5423,7 +5149,7 @@
         },
         "compileOnly": true
       },
-      "System.Xml.XPath.Reference/4.1.2.0": {
+      "System.Xml.XPath/4.1.2.0": {
         "compile": {
           "System.Xml.XPath.dll": {}
         },
@@ -5449,13 +5175,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Braintree/4.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-brCctJRsCMd/fMvkYt4BEIr/7EL3UAIvL4ykn41u08iCPB3Ql+svUHEdvy1cdTNtKtQ/Xk3knZ+mbLVASmHCmg==",
-      "path": "braintree/4.9.0",
-      "hashPath": "braintree.4.9.0.nupkg.sha512"
-    },
     "BuildBundlerMinifier/3.0.415": {
       "type": "package",
       "serviceable": true,
@@ -5476,13 +5195,6 @@
       "sha512": "sha512-QMuoI4RfAjCVxXq1LK6fbWpj38mTGiWFouZdP6DUNcFHPx9GHqQhqbrJdKE5aZpWyLw5F380Lp/smZJideOvYA==",
       "path": "cloudscribe.web.pagination/2.1.11",
       "hashPath": "cloudscribe.web.pagination.2.1.11.nupkg.sha512"
-    },
-    "DinkToPdf/1.0.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wJDlcNXjQ+OnBFwh3LBeAXgrXqlKl0RsgN60XpxEFbyqzdaG9ASb5HTXQjXQPaBguSCOrGZZESPnpcng34TEkw==",
-      "path": "dinktopdf/1.0.8",
-      "hashPath": "dinktopdf.1.0.8.nupkg.sha512"
     },
     "Humanizer/2.7.2": {
       "type": "package",
@@ -6800,13 +6512,6 @@
       "path": "serilog.sinks.rollingfile/3.3.1-dev-00767",
       "hashPath": "serilog.sinks.rollingfile.3.3.1-dev-00767.nupkg.sha512"
     },
-    "Stripe.net/22.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-YFtNoypJcc2LwkEq/1dfmFZsUIJXuOmJ9s5yvBMhDuv4cW8oSdfoNaaG8s4aYxaaUtuBUvkAp3XzECP/+Xq9dg==",
-      "path": "stripe.net/22.8.0",
-      "hashPath": "stripe.net.22.8.0.nupkg.sha512"
-    },
     "Swashbuckle.AspNetCore/5.0.0-rc4": {
       "type": "package",
       "serviceable": true,
@@ -7416,13 +7121,6 @@
       "path": "system.threading.tasks.extensions/4.5.3",
       "hashPath": "system.threading.tasks.extensions.4.5.3.nupkg.sha512"
     },
-    "System.Threading.Thread/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
-      "path": "system.threading.thread/4.0.0",
-      "hashPath": "system.threading.thread.4.0.0.nupkg.sha512"
-    },
     "System.Threading.ThreadPool/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -7465,20 +7163,6 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "System.Xml.XPath/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UWd1H+1IJ9Wlq5nognZ/XJdyj8qPE4XufBUkAW59ijsCPjZkZe0MUzKKJFBr+ZWBe5Wq1u1d5f2CYgE93uH7DA==",
-      "path": "system.xml.xpath/4.0.1",
-      "hashPath": "system.xml.xpath.4.0.1.nupkg.sha512"
-    },
-    "System.Xml.XPath.XmlDocument/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
-      "path": "system.xml.xpath.xmldocument/4.0.1",
-      "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
-    },
     "SimplCommerce.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -7514,11 +7198,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SimplCommerce.Module.DinkToPdf/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "SimplCommerce.Module.EmailSenderSmtp/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -7544,11 +7223,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SimplCommerce.Module.PaymentBraintree/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "SimplCommerce.Module.PaymentCashfree/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -7559,27 +7233,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SimplCommerce.Module.PaymentMomo/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.PaymentNganLuong/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.PaymentPaypalExpress/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "SimplCommerce.Module.Payments/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.PaymentStripe/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -7614,27 +7268,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SimplCommerce.Module.Shipments/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "SimplCommerce.Module.Shipping/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.ShippingFree/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.ShippingPrices/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.ShippingTableRate/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -7649,17 +7283,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SimplCommerce.Module.Tax/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "SimplCommerce.Module.Vendors/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.WishList/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -8974,7 +8598,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Threading.Thread.Reference/4.1.2.0": {
+    "System.Threading.Thread/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -9059,7 +8683,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Xml.XPath.Reference/4.1.2.0": {
+    "System.Xml.XPath/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

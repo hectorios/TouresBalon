@@ -22,6 +22,8 @@ namespace SimplCommerce.Module.Core.Models
         [StringLength(450)]
         public string FullName { get; set; }
 
+        public string IdNumber { get; set; }
+
         public long? VendorId { get; set; }
 
         public bool IsDeleted { get; set; }

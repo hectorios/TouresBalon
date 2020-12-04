@@ -2502,8 +2502,7 @@
       "SimplCommerce.Module.Catalog/1.0.0": {
         "dependencies": {
           "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0",
-          "SimplCommerce.Module.Tax": "1.0.0"
+          "SimplCommerce.Module.Core": "1.0.0"
         },
         "runtime": {
           "SimplCommerce.Module.Catalog.dll": {}
@@ -2528,15 +2527,6 @@
         },
         "runtime": {
           "SimplCommerce.Module.Inventory.dll": {}
-        }
-      },
-      "SimplCommerce.Module.Tax/1.0.0": {
-        "dependencies": {
-          "SimplCommerce.Infrastructure": "1.0.0",
-          "SimplCommerce.Module.Core": "1.0.0"
-        },
-        "runtime": {
-          "SimplCommerce.Module.Tax.dll": {}
         }
       }
     }
@@ -4327,11 +4317,6 @@
       "sha512": ""
     },
     "SimplCommerce.Module.Inventory/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SimplCommerce.Module.Tax/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

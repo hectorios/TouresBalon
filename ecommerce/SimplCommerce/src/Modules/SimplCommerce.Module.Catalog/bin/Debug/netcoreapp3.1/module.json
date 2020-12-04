@@ -1,6 +1,6 @@
-﻿{
-  "id": "SimplCommerce.Module.Tax",
-  "name": "Taxes",
+{
+  "id": "SimplCommerce.Module.Catalog",
+  "name": "Catalog",
   "isBundledWithHost": true,
   "version": "1.0.0"
 }

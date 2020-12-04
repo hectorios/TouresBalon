@@ -10,7 +10,6 @@ using SimplCommerce.Module.Core.Extensions;
 using SimplCommerce.Module.Core.Models;
 using SimplCommerce.Module.Orders.Areas.Orders.ViewModels;
 using SimplCommerce.Module.Orders.Services;
-using SimplCommerce.Module.ShippingPrices.Services;
 using SimplCommerce.Module.ShoppingCart.Models;
 using SimplCommerce.Module.ShoppingCart.Services;
 
@@ -26,7 +25,6 @@ namespace SimplCommerce.Module.Orders.Areas.Orders.Controllers
         private readonly IRepositoryWithTypedId<Country, string> _countryRepository;
         private readonly IRepository<StateOrProvince> _stateOrProvinceRepository;
         private readonly IRepository<UserAddress> _userAddressRepository;
-        private readonly IShippingPriceService _shippingPriceService;
         private readonly ICartService _cartService;
         private readonly IWorkContext _workContext;
         private readonly IRepository<Cart> _cartRepository;
@@ -35,7 +33,6 @@ namespace SimplCommerce.Module.Orders.Areas.Orders.Controllers
             IRepository<StateOrProvince> stateOrProvinceRepository,
             IRepositoryWithTypedId<Country, string> countryRepository,
             IRepository<UserAddress> userAddressRepository,
-            IShippingPriceService shippingPriceService,
             IOrderService orderService,
             ICartService cartService,
             IWorkContext workContext,
@@ -44,7 +41,6 @@ namespace SimplCommerce.Module.Orders.Areas.Orders.Controllers
             _stateOrProvinceRepository = stateOrProvinceRepository;
             _countryRepository = countryRepository;
             _userAddressRepository = userAddressRepository;
-            _shippingPriceService = shippingPriceService;
             _orderService = orderService;
             _cartService = cartService;
             _workContext = workContext;

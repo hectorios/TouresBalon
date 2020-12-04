@@ -53,8 +53,7 @@ namespace SimplCommerce.Module.PaymentCoD.Areas.PaymentCoD.Controllers
                 return Redirect("~/checkout/payment");
             }
 
-            var calculatedFee = CalculateFee(cart);           
-            var orderCreateResult = await _orderService.CreateOrder(cart.Id, "CashOnDelivery", calculatedFee);
+            var orderCreateResult = await _orderService.CreateOrder(cart.Id, "CashOnDelivery", 0);
 
             if (!orderCreateResult.Success)
             {
@@ -92,10 +91,5 @@ namespace SimplCommerce.Module.PaymentCoD.Areas.PaymentCoD.Controllers
             return true;
         }
 
-        private decimal CalculateFee(CartVm cart)
-        {
-            var percent = _setting.Value.PaymentFee;
-            return (cart.OrderTotal / 100) * percent;
-        }
     }
 }

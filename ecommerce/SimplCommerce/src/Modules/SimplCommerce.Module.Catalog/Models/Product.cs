@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using SimplCommerce.Module.Core.Models;
-using SimplCommerce.Module.Tax.Models;
 
 namespace SimplCommerce.Module.Catalog.Models
 {
@@ -76,10 +75,6 @@ namespace SimplCommerce.Module.Catalog.Models
 
         public Brand Brand { get; set; }
 
-        public long? TaxClassId { get; set; }
-
-        public TaxClass TaxClass { get; set; }
-
         public void AddCategory(ProductCategory category)
         {
             category.Product = this;
@@ -142,13 +137,11 @@ namespace SimplCommerce.Module.Catalog.Models
             product.StockQuantity = StockQuantity;
             product.BrandId = BrandId;
             product.VendorId = VendorId;
-            product.TaxClassId = TaxClassId;
             product.StockTrackingIsEnabled = StockTrackingIsEnabled;
             product.Sku = Sku;
             product.Gtin = Gtin;
             product.NormalizedName = NormalizedName;
             product.DisplayOrder = DisplayOrder;
-            product.TaxClassId = TaxClassId;
             product.Slug = Slug;
 
             foreach (var attribute in AttributeValues)

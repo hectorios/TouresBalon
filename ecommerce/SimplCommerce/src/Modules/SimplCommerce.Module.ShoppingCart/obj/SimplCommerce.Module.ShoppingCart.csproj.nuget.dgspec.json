@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj": {}
+    "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
+    "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj",
         "projectName": "SimplCommerce.Module.Catalog",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj",
-        "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,14 +31,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
               },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj"
-              },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
               }
             }
           }
@@ -76,25 +74,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+    "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj",
         "projectName": "SimplCommerce.Module.Core",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj",
-        "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -106,8 +105,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
               }
             }
           }
@@ -158,25 +157,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj": {
+    "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj",
         "projectName": "SimplCommerce.Module.Pricing",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj",
-        "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -188,14 +188,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
               },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
               },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
               }
             }
           }
@@ -234,25 +234,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj": {
+    "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj",
         "projectName": "SimplCommerce.Module.ShoppingCart",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj",
-        "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\SimplCommerce.Module.ShoppingCart.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.ShoppingCart\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -264,17 +265,17 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Catalog\\SimplCommerce.Module.Catalog.csproj"
               },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
               },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Pricing\\SimplCommerce.Module.Pricing.csproj"
               },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
+              "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
               }
             }
           }
@@ -313,98 +314,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj": {
+    "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj",
-        "projectName": "SimplCommerce.Module.Tax",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\SimplCommerce.Module.Tax.csproj",
-        "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Tax\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
-              },
-              "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj",
         "projectName": "SimplCommerce.Infrastructure",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\SimplCommerce.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\SimplCommerce.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -476,7 +405,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

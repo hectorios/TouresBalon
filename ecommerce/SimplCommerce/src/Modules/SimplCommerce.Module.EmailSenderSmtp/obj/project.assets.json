@@ -10524,24 +10524,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hecto\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj",
       "projectName": "SimplCommerce.Module.EmailSenderSmtp",
-      "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj",
-      "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\SimplCommerce.Module.EmailSenderSmtp.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.EmailSenderSmtp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\hecto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -10553,8 +10554,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
-              "projectPath": "C:\\Users\\hecto\\source\\repos\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
+            "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\PICA\\TouresBalon\\ecommerce\\SimplCommerce\\src\\Modules\\SimplCommerce.Module.Core\\SimplCommerce.Module.Core.csproj"
             }
           }
         }
@@ -10597,7 +10598,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

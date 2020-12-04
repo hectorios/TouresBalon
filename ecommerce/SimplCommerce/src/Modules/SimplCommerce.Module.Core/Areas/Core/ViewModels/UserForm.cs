@@ -10,6 +10,8 @@ namespace SimplCommerce.Module.Core.Areas.Core.ViewModels
         [Required(ErrorMessage = "The {0} field is required.")]
         public string FullName { get; set; }
 
+        public string IdNumber { get; set; }
+
         public long? VendorId { get; set; }
 
         [Required(ErrorMessage = "The {0} field is required.")]

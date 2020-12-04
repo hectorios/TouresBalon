@@ -1,0 +1,15 @@
+[
+  {
+    "outputFileName": "wwwroot/admin/paymentcreditcard.min.js",
+    "inputFiles": [
+      "wwwroot/admin/paymentCreditCard.module.js",
+      "wwwroot/admin/config/creditcard-service.js",
+      "wwwroot/admin/config/config-form.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

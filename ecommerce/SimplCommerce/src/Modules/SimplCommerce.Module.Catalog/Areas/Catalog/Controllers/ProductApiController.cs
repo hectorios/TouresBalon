@@ -121,7 +121,6 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
                 CategoryIds = product.Categories.Select(x => x.CategoryId).ToList(),
                 ThumbnailImageUrl = _mediaService.GetThumbnailUrl(product.ThumbnailImage),
                 BrandId = product.BrandId,
-                TaxClassId = product.TaxClassId,
                 StockTrackingIsEnabled = product.StockTrackingIsEnabled
             };
 
@@ -315,7 +314,6 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
                 IsCallForPricing = model.Product.IsCallForPricing,
                 IsAllowToOrder = model.Product.IsAllowToOrder,
                 BrandId = model.Product.BrandId,
-                TaxClassId = model.Product.TaxClassId,
                 StockTrackingIsEnabled = model.Product.StockTrackingIsEnabled,
                 HasOptions = model.Product.Variations.Any() ? true : false,
                 IsVisibleIndividually = true,
@@ -431,7 +429,6 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
             product.SpecialPriceStart = model.Product.SpecialPriceStart;
             product.SpecialPriceEnd = model.Product.SpecialPriceEnd;
             product.BrandId = model.Product.BrandId;
-            product.TaxClassId = model.Product.TaxClassId;
             product.IsFeatured = model.Product.IsFeatured;
             product.IsPublished = model.Product.IsPublished;
             product.IsCallForPricing = model.Product.IsCallForPricing;
