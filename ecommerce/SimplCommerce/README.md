@@ -4,7 +4,7 @@
 
 ## Colaboradores
 
-Alfredo García
-Andres Venegas
-Héctor Ríos
-Wilson Posada
+- Alfredo García
+- Andres Venegas
+- Héctor Ríos
+- Wilson Posada
