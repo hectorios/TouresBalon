@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz" xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" xmlns:email="http://www.mulesoft.org/schema/mule/email" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/current/mule-jersey.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/batch/current/mule-batch.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd
+http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd
+http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd">
+	<http:request-config name="HTTP_Request_Configuration2" host="localhost" port="8083" doc:name="HTTP Request Configuration"/>
+	<http:request-builder name="Request_Builder" doc:name="Request Builder">
+		<http:header headerName="Cookie" value="#[message.inboundProperties['set-cookie']]"/>
+	</http:request-builder>
+	<db:generic-config name="Generic_Database_Configuration" url="jdbc:sqlserver://10.39.1.180:1439;user=sa;password=ASD123456789asd;databaseName=SimplCommerce;loginTimeout=30;" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" doc:name="Generic Database Configuration"/>
+	<ws:consumer-config name="Web_Service_ConsumerAvianca" wsdlLocation="http://www.javeriana.somee.com/AviancaService.svc?wsdl" service="AviancaService" port="BasicHttpBinding_IAviancaService" serviceAddress="http://www.javeriana.somee.com/AviancaService.svc" doc:name="Web Service Consumer"/>
+	<ws:consumer-config name="Web_Service_ConsumerCreditcardvalidation" wsdlLocation="http://10.39.1.195:8090/ws/creditcardvalidation.wsdl" service="CountriesPortService" port="CountriesPortSoap11" serviceAddress="http://10.39.1.195:8090/ws" doc:name="Web Service Consumer"/>
+	<http:request-config name="HTTP_Request_ConfigurationBonita" host="localhost" port="8083" doc:name="HTTP Request Configuration"/>
+	<flow name="batchAvianca">
+		<poll doc:name="Poll">
+			<fixed-frequency-scheduler frequency="10000"/>
+			<logger message="Init batch Avianca" level="INFO" doc:name="Logger"/>
+		</poll>
+		<set-payload value="&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:tem=&quot;http://tempuri.org/&quot; xmlns:avi=&quot;http://schemas.datacontract.org/2004/07/AviancaDemoWcfService&quot;&gt;&lt;soapenv:Header/&gt;&lt;soapenv:Body&gt;&lt;tem:GetFlights&gt;&lt;tem:flightOption&gt;&lt;avi:DepartureDate&gt;2019-06-18T16:55:46.678-07:00&lt;/avi:DepartureDate&gt;&lt;avi:DestinationCityDescription&gt;LIMA&lt;/avi:DestinationCityDescription&gt;&lt;avi:OneWay&gt;false&lt;/avi:OneWay&gt;&lt;avi:OriginCityDescription&gt;BOGOTA&lt;/avi:OriginCityDescription&gt;&lt;avi:PassengersNumber&gt;1&lt;/avi:PassengersNumber&gt;&lt;avi:ReturnDate&gt;2019-06-18T16:55:46.678-07:00&lt;/avi:ReturnDate&gt;&lt;/tem:flightOption&gt;&lt;/tem:GetFlights&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;"  doc:name="Set Payload"/>
+		<logger message="Avianca request: #[payload]" level="INFO" doc:name="Logger"/>
+		<mulexml:xml-to-dom-transformer doc:name="XML to DOM"/>
+		<dw:transform-message doc:name="Transform Message" metadata:id="2ba278c3-3214-40d7-810a-c18ff018ee13">
+			<dw:input-payload mimeType="application/xml"/>
+			<dw:set-payload><![CDATA[%dw 1.0
+%output application/xml
+%namespace ns0 http://tempuri.org/
+%namespace ns1 http://schemas.datacontract.org/2004/07/AviancaDemoWcfService
+%namespace ns02 http://schemas.xmlsoap.org/soap/envelope/
+---
+{
+	ns0#GetFlights: {
+		ns0#flightOption: {
+			ns1#DepartureDate: payload.ns02#Envelope.ns02#Body.ns0#GetFlights.ns0#flightOption.ns1#DepartureDate,
+			ns1#DestinationCityDescription: payload.ns02#Envelope.ns02#Body.ns0#GetFlights.ns0#flightOption.ns1#DestinationCityDescription,
+			ns1#OneWay: payload.ns02#Envelope.ns02#Body.ns0#GetFlights.ns0#flightOption.ns1#OneWay as :boolean,
+			ns1#OriginCityDescription: payload.ns02#Envelope.ns02#Body.ns0#GetFlights.ns0#flightOption.ns1#OriginCityDescription,
+			ns1#PassengersNumber: payload.ns02#Envelope.ns02#Body.ns0#GetFlights.ns0#flightOption.ns1#PassengersNumber,
+			ns1#ReturnDate: payload.ns02#Envelope.ns02#Body.ns0#GetFlights.ns0#flightOption.ns1#ReturnDate
+		}
+	}
+}]]></dw:set-payload>
+		</dw:transform-message>
+		<ws:consumer config-ref="Web_Service_ConsumerAvianca" operation="GetFlights" doc:name="Avianca"/>
+		<byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+		<mulexml:dom-to-xml-transformer doc:name="DOM to XML"/>
+		<logger message="Response Avianca:#[payload]" level="INFO" doc:name="Logger"/>
+		<db:stored-procedure config-ref="Generic_Database_Configuration" doc:name="UpdateVuelos">
+			<db:parameterized-query><![CDATA[{call sp_udateCatalog_Product('Tiquetes Aéreos')}]]></db:parameterized-query>
+		</db:stored-procedure>
+		<logger message="End Avianca" level="INFO" doc:name="Logger"/>
+		<exception-strategy ref="esbCatch_Exception_Strategy" doc:name="Reference Exception Strategy"/>
+	</flow>
+	<catch-exception-strategy name="esbCatch_Exception_Strategy">
+		<logger message="#[payload]" level="INFO" doc:name="Logger"/>
+		<logger message="error test" level="INFO" doc:name="Logger"/>
+	</catch-exception-strategy>
+</mule>

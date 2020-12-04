@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd">
+<http:request-config name="HTTP_Request_ConfigurationHiltons" host="10.39.1.180" port="80" basePath="/api" doc:name="HTTP Request Configuration"/>
+<http:request-config name="HTTP_Request_Configuration1" host="10.39.1.180" port="80" basePath="api/Booking" doc:name="HTTP Request Configuration"/>
+	<db:generic-config name="Generic_Database_Configuration" url="jdbc:sqlserver://10.39.1.180:1439;user=sa;password=ASD123456789asd;databaseName=SimplCommerce;loginTimeout=30;" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" doc:name="Generic Database Configuration"/>	
+	<flow name="batchHiltons" initialState="started">
+		<poll doc:name="Poll">
+			<fixed-frequency-scheduler frequency="10000"/>
+			<logger message="Init Bacth Hiltons" level="INFO" doc:name="Logger"/>
+		</poll>
+		<http:request config-ref="HTTP_Request_ConfigurationHiltons" path="/Booking?limit=10" method="GET" sendBodyMode="NEVER" doc:name="Hiltons"/>
+		<byte-array-to-string-transformer doc:name="Byte Array to String"/>
+		<logger message="Hiltons: #[payload]" level="INFO" doc:name="Logger"/>
+		<set-payload value="Hospedaje" doc:name="Set Payload"/>
+		<db:stored-procedure config-ref="Generic_Database_Configuration" doc:name="UpdateHotel">
+			<db:parameterized-query><![CDATA[{call sp_udateCatalog_Product('Hospedaje')}]]></db:parameterized-query>
+		</db:stored-procedure>
+		<logger message="End Hiltons" level="INFO" doc:name="Logger"/>
+		<exception-strategy ref="esbCatch_Exception_Strategy" doc:name="Reference Exception Strategy"/>
+	</flow>
+	<catch-exception-strategy name="esbCatch_Exception_Strategy">
+		<logger message="#[payload]" level="INFO" doc:name="Logger"/>
+		<logger message="error test" level="INFO" doc:name="Logger"/>
+	</catch-exception-strategy>
+</mule>

@@ -1,6 +1,0 @@
-﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="_content/SimplCommerce.Module.Catalog" Path="C:\Users\Usuario\PICA\TouresBalon\ecommerce\SimplCommerce\src\Modules\SimplCommerce.Module.Catalog\wwwroot\" />
-  <ContentRoot BasePath="_content/SimplCommerce.Module.Core" Path="C:\Users\Usuario\PICA\TouresBalon\ecommerce\SimplCommerce\src\Modules\SimplCommerce.Module.Core\wwwroot\" />
-  <ContentRoot BasePath="_content/SimplCommerce.Module.Pricing" Path="C:\Users\Usuario\PICA\TouresBalon\ecommerce\SimplCommerce\src\Modules\SimplCommerce.Module.Pricing\wwwroot\" />
-  <ContentRoot BasePath="_content/SimplCommerce.Module.ShoppingCart" Path="C:\Users\Usuario\PICA\TouresBalon\ecommerce\SimplCommerce\src\Modules\SimplCommerce.Module.ShoppingCart\wwwroot\" />
-</StaticWebAssets>

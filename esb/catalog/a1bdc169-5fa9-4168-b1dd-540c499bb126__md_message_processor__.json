@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {},
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "Web_Service_ConsumerAvianca",
+            "typeId": "GetFlights"
+        }
+    },
+    "id": "a1bdc169-5fa9-4168-b1dd-540c499bb126",
+    "version": "5.2.0.0"
+}
