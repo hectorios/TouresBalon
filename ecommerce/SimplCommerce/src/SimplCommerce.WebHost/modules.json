@@ -55,22 +55,12 @@
     "version": "1.0.0"
   },
   {
-    "id": "SimplCommerce.Module.PaymentCoD",
-    "isBundledWithHost": true,
-    "version": "1.0.0"
-  },
-  {
     "id": "SimplCommerce.Module.PaymentCreditCard",
     "isBundledWithHost": true,
     "version": "1.0.0"
   },
   {
     "id": "SimplCommerce.Module.Payments",
-    "isBundledWithHost": true,
-    "version": "1.0.0"
-  },
-  {
-    "id": "SimplCommerce.Module.PaymentCashfree",
     "isBundledWithHost": true,
     "version": "1.0.0"
   },
