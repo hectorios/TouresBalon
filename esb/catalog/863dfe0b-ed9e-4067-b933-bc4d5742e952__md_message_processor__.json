@@ -1,0 +1,13 @@
+{
+    "inputMessageMetadata": {
+        "flowVariables": {
+            "httpUriParams0": {
+                "connectorName": "#_custom_mule_metadata_type_#",
+                "typeId": "httpUriParams"
+            }
+        }
+    },
+    "outputMessageMetadata": {},
+    "id": "863dfe0b-ed9e-4067-b933-bc4d5742e952",
+    "version": "5.2.0.0"
+}
