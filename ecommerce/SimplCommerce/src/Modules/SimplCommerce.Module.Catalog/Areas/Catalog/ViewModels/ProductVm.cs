@@ -26,6 +26,10 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
 
         public DateTimeOffset? SpecialPriceEnd { get; set; }
 
+        public DateTimeOffset? DepartureDate { get; set; }
+
+        public DateTimeOffset? ReturnDate { get; set; }
+
         public bool IsCallForPricing { get; set; }
 
         public bool IsAllowToOrder { get; set; }
@@ -51,6 +55,11 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
         public string Description { get; set; }
 
         public string Specification { get; set; }
+
+        public string Origin { get; set; }
+
+        public string Destination { get; set; }
+
 
         public bool IsPublished { get; set; }
 

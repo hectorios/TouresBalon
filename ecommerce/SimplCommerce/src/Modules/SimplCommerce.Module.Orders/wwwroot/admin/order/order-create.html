@@ -1,71 +1,115 @@
-<div class="page-header">
-    <div class="row">
-        <div class="col-md-8">
-            <h2>Ordenes</h2>
-        </div>
-        <div class="col-md-4 text-right">
-            <a ui-sref="order-create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Crear Orden</a>
-            <!--<button ng-click="vm.getOrdersExport()" class="btn btn-info">{{::vm.translate.get('Export Orders')}}</button>
-            <button ng-click="vm.getOrderLinesExport()" class="btn btn-info">{{::vm.translate.get('Export Orders with Order Lines')}}</button>-->
-        </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Crear Orden</h2>
+    </div>
+    <div class="panel-body order-form">
+        <form name="orderForm" novalidate class="form-horizontal">
+            <div class="col-sm-offset-2 bg-danger" ng-show="vm.validationErrors">
+                <ul>
+                    <li ng-repeat="error in vm.validationErrors">{{error}}</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Cliente</label>
+                <div class="col-sm-10 search-user">
+                    <input name="customer-search" ng-model="vm.customer.fullName" ng-change="vm.searchCustomers()" class="form-control" placeholder="Search user..." autocomplete="off" />
+                    <div id="search-users-results" ng-show="vm.isSearchingCustomers">
+                        <div class="users" ng-repeat="user in vm.searchedCustomers" ng-click="vm.selectCustomer(user)">{{user.fullName}} - {{user.email}} - {{user.phoneNumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
+                <div class="col-sm-10 search-user">
+                    <input name="customer-name" ng-model="vm.customer.fullName" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10 search-user">
+                    <input name="customer-email" ng-model="vm.customer.email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Categoría</label>
+                <div class="col-sm-10 search-user">
+                    <input name="customer-phone" ng-model="vm.customer.phoneNumber" class="form-control" />
+                </div>
+            </div>
+
+            <table ng-show="vm.customer.id" class="table table-striped">
+                <tr>
+                    <th>ID Producto</th>
+                    <th>Nombre de Producto</th>
+                    <th class="text-right">Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+                <tr ng-repeat="item in vm.cart.items">
+                    <td>{{item.productId}}</td>
+                    <td>{{item.productName}}</td>
+                    <td class="text-right">{{item.productPrice}}</td>
+                    <td><input class="form-control" ng-change="vm.updateCartItemQuantity(item)" ng-model="item.quantity" /></td>
+                    <td><button ng-click="vm.removeCartItem(item)" class="btn btn-danger btn-xs delete"> <span class="glyphicon glyphicon-remove"></span></button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control" ng-model="vm.addingProduct.id" />
+                    </td>
+                    <td colspan="4" class="form-inline">
+                        <input class="form-control" placeholder="search by product name" ng-model="vm.addingProduct.name" ng-change="vm.searchProducts()" />
+                        <div id="search-products-results" ng-show="vm.isSearchingProducts">
+                            <div class="products" ng-repeat="product in vm.searchedProducts" ng-click="vm.selectProduct(product)">{{product.id}} - {{product.name}}</div>
+                        </div>
+                        <button class="btn btn-default" ng-click="vm.addProduct()">Añadir Producto</button>
+                    </td>
+                </tr>
+            </table>
+            <div ng-show="vm.customer.id && vm.cart.items.length > 0">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Dirección de Envío</h4>
+                        <div class="radio" ng-repeat="address in vm.customerAddress.addresses">
+                            <label>
+                                <input type="radio" ng-change="vm.updateTaxAndShippingPrice()" name="shippingAddressId" value="{{address.userAddressId}}" ng-model="vm.selectedShippingAddressId">
+                                <strong>{{address.contactName}} </strong><br />
+                                {{address.addressLine1}} <br />
+                                {{address.addressLine2}} <br />
+                                Phone: {{address.phone}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <h4>Notas</h4>
+                <textarea class="form-control" ng-model="vm.cart.orderNote" rows="3"></textarea>
+                <h4>Detalle Orden</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Producto</th>
+                        <th class="text-right">Cantidad</th>
+                        <th class="text-right">Precio</th>
+                        <th class="text-right">Total</th>
+                    </tr>
+                    <tr ng-repeat="item in vm.cart.items">
+                        <td>{{item.productName}}</td>
+                        <td class="text-right">{{item.quantity}}</td>
+                        <td class="text-right">{{item.productPriceString}}</td>
+                        <td class="text-right">{{item.totalString}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right">Subtotal: {{vm.cart.subTotalString}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right"><strong>Total: {{vm.cart.orderTotalString}}</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-primary" ng-disabled="!vm.selectedShippingOption || vm.cart.items.length === 0 || (vm.selectedShippingAddressId === '0' &&  orderForm.$invalid)" ng-click="vm.createOrder()"><span class="glyphicon glyphicon-ok"></span> {{::vm.translate.get('Create Order')}}</button>
+                    <button ui-sref="order" class="btn btn-default">Cancelar</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-
-<table class="table table-striped" st-pipe="vm.getOrders" st-table="vm.orders">
-    <thead>
-        <tr>
-            <th st-sort="Id" class="sortable">Id Orden</th>
-            <th>Estado</th>
-            <th>Cliente</th>
-            <th st-sort="CreatedOn" class="sortable">Fecha Orden</th>
-            <th st-sort="SubTotal" class="sortable">Total</th>
-            <th>Detalle</th>
-        </tr>
-        <tr>
-            <th>
-                <div class="form-group">
-                    <input type="number" class="form-control" st-search="Id" />
-                </div>
-            </th>
-            <th>
-                <div class="form-group">
-                    <select class="form-control" st-search="Status">
-                        <option value="">Todo</option>
-                        <option ng-repeat="status in vm.orderStatus" value="{{status.id}}">{{status.name}}</option>
-                    </select>
-                </div>
-            </th>
-            <th>
-                <div class="form-group">
-                    <input class="form-control" st-search="CustomerName" />
-                </div>
-            </th>
-            <th><st-date-range predicate="CreatedOn" before="query.before" after="query.after"></st-date-range></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th ng-show="!vm.isLoading" colspan="6">{{vm.tableStateRef.pagination.totalItemCount | number:0}} {{::vm.translate.get('records found')}}</th>
-        </tr>
-    </thead>
-    <tbody ng-show="!vm.isLoading">
-        <tr ng-repeat="order in vm.orders">
-            <td>Id Orden</td>
-            <td>Estado</td>
-            <td>Cliente</td>
-            <td>Fecha Orden</td>
-            <td>Total</td>
-            <td><a ui-sref="order-detail({id: order.id})" title="View" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-eye-open"></span></a></td>
-        </tr>
-    </tbody>
-    <tbody ng-show="vm.isLoading">
-        <tr>
-            <td colspan="6" class="text-center">Cargando ... </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td class="text-center" st-pagination="" st-items-by-page="50" st-displayed-pages="10" colspan="6"></td>
-        </tr>
-    </tfoot>
-</table>

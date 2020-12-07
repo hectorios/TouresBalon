@@ -1,24 +1,25 @@
 <div class="page-header">
     <div class="row">
         <div class="col-md-8">
-            <h2>Ordenes</h2>
+            <h2>{{::vm.translate.get('Orders')}}</h2>
         </div>
         <div class="col-md-4 text-right">
-            <a ui-sref="order-create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Crear Orden</a>
-            <!--<button ng-click="vm.getOrdersExport()" class="btn btn-info">{{::vm.translate.get('Export Orders')}}</button>
-            <button ng-click="vm.getOrderLinesExport()" class="btn btn-info">{{::vm.translate.get('Export Orders with Order Lines')}}</button>-->
+            <a ui-sref="order-create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> {{::vm.translate.get('Create Order')}}</a>
+            <button ng-click="vm.getOrdersExport()" class="btn btn-info">{{::vm.translate.get('Export Orders')}}</button>
+            <button ng-click="vm.getOrderLinesExport()" class="btn btn-info">{{::vm.translate.get('Export Orders with Order Lines')}}</button>
         </div>
     </div>
 </div>
+
 <table class="table table-striped" st-pipe="vm.getOrders" st-table="vm.orders">
     <thead>
         <tr>
-            <th st-sort="Id" class="sortable">Id Orden</th>
-            <th>Estado</th>
-            <th>Cliente</th>
-            <th st-sort="CreatedOn" class="sortable">Fecha Orden</th>
-            <th st-sort="SubTotal" class="sortable">Total</th>
-            <th>Detalle</th>
+            <th st-sort="Id" class="sortable">{{::vm.translate.get('OrderId')}}</th>
+            <th>{{::vm.translate.get('Order Status')}}</th>
+            <th>{{::vm.translate.get('Customer')}}</th>
+            <th st-sort="CreatedOn" class="sortable">{{::vm.translate.get('Created On')}}</th>
+            <th st-sort="SubTotal" class="sortable">{{::vm.translate.get('Order Total')}}</th>
+            <th>{{::vm.translate.get('Actions')}}</th>
         </tr>
         <tr>
             <th>
@@ -29,7 +30,7 @@
             <th>
                 <div class="form-group">
                     <select class="form-control" st-search="Status">
-                        <option value="">Todo</option>
+                        <option value="">All</option>
                         <option ng-repeat="status in vm.orderStatus" value="{{status.id}}">{{status.name}}</option>
                     </select>
                 </div>
@@ -49,17 +50,17 @@
     </thead>
     <tbody ng-show="!vm.isLoading">
         <tr ng-repeat="order in vm.orders">
-            <td>Id Orden</td>
-            <td>Estado</td>
-            <td>Cliente</td>
-            <td>Fecha Orden</td>
-            <td>Total</td>
+            <td>{{order.id}}</td>
+            <td>{{order.orderStatus}}</td>
+            <td>{{order.customerName}}</td>
+            <td>{{order.createdOn | date:'medium'}}</td>
+            <td>{{order.orderTotalString }}</td>
             <td><a ui-sref="order-detail({id: order.id})" title="View" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-eye-open"></span></a></td>
         </tr>
     </tbody>
     <tbody ng-show="vm.isLoading">
         <tr>
-            <td colspan="6" class="text-center">Cargando ... </td>
+            <td colspan="6" class="text-center">Loading ... </td>
         </tr>
     </tbody>
     <tfoot>

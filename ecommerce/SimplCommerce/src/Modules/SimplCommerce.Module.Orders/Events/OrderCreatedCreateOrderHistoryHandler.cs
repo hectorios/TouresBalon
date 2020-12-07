@@ -24,7 +24,7 @@ namespace SimplCommerce.Module.Orders.Events
             OrderId = notification.Order.Id,
             CreatedOn = DateTimeOffset.Now,
             CreatedById = notification.Order.CreatedById,
-            NewStatus = OrderStatus.New,
+            NewStatus = OrderStatus.Nueva,
             Note = notification.Order.OrderNote,
         };
 

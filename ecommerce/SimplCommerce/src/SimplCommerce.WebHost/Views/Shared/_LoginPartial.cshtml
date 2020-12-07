@@ -11,7 +11,7 @@
     </li>
     if (User.IsInRole("admin") || User.IsInRole("vendor"))
     {
-        <li class="nav-item"><a class="nav-link" asp-area="Core" asp-controller="HomeAdmin" asp-action="Index">Tablero</a></li>
+        <li class="nav-item"><a class="nav-link" asp-area="Core" asp-controller="HomeAdmin" asp-action="Index">Gestión de Órdenes y Productos</a></li>
     }
     <li class="nav-item">
         <form asp-area="Core" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="">

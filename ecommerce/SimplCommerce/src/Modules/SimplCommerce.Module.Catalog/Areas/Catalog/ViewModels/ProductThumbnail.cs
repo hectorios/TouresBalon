@@ -29,6 +29,10 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
 
         public DateTimeOffset? SpecialPriceEnd { get; set; }
 
+        public DateTimeOffset? DepartureDate { get; set; }
+
+        public DateTimeOffset? ReturnDate { get; set; }
+
         public Media ThumbnailImage { get; set; }
 
         public string ThumbnailUrl { get; set; }
@@ -51,6 +55,8 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
                 SpecialPrice = product.SpecialPrice,
                 SpecialPriceStart = product.SpecialPriceStart,
                 SpecialPriceEnd = product.SpecialPriceEnd,
+                DepartureDate = product.DepartureDate,
+                ReturnDate = product.ReturnDate,
                 StockQuantity = product.StockQuantity,
                 IsAllowToOrder = product.IsAllowToOrder,
                 IsCallForPricing = product.IsCallForPricing,

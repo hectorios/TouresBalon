@@ -24,6 +24,10 @@ namespace SimplCommerce.Module.Catalog.Models
 
         public DateTimeOffset? SpecialPriceEnd { get; set; }
 
+        public DateTimeOffset? DepartureDate { get; set; }
+
+        public DateTimeOffset? ReturnDate { get; set; }
+
         public bool HasOptions { get; set; }
 
         public bool IsVisibleIndividually { get; set; }
@@ -46,6 +50,12 @@ namespace SimplCommerce.Module.Catalog.Models
 
         [StringLength(450)]
         public string NormalizedName { get; set; }
+
+        [StringLength(450)]
+        public string Origin { get; set; }
+
+        [StringLength(450)]
+        public string Destination { get; set; }
 
         public int DisplayOrder { get; set; }
 
@@ -129,6 +139,10 @@ namespace SimplCommerce.Module.Catalog.Models
             product.SpecialPrice = SpecialPrice;
             product.SpecialPriceStart = SpecialPriceStart;
             product.SpecialPriceEnd = SpecialPriceEnd;
+            product.DepartureDate = DepartureDate;
+            product.ReturnDate = ReturnDate;
+            product.Origin = Origin;
+            product.Destination = Destination;
             product.HasOptions = HasOptions;
             product.IsVisibleIndividually = IsVisibleIndividually;
             product.IsFeatured = IsFeatured;

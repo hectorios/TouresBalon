@@ -32,6 +32,8 @@
 
         vm.datePickerSpecialPriceStart = {};
         vm.datePickerSpecialPriceEnd = {};
+        vm.datePickerDepartureDate = {};
+        vm.datePickerReturnDate = {};
 
         vm.updateSlug = function () {
             vm.product.slug = slugify(vm.product.name);
@@ -311,6 +313,10 @@
             vm.product.specialPrice = vm.product.specialPrice === null ? '' : vm.product.specialPrice;
             vm.product.specialPriceStart = vm.product.specialPriceStart === null ? '' : vm.product.specialPriceStart;
             vm.product.specialPriceEnd = vm.product.specialPriceEnd === null ? '' : vm.product.specialPriceEnd;
+            vm.product.departureDate = vm.product.departureDate === null ? '' : vm.product.departureDate;
+            vm.product.returnDate = vm.product.returnDate === null ? '' : vm.product.returnDate;
+            vm.product.origin = vm.product.origin === null ? '' : vm.product.origin;
+            vm.product.destination = vm.product.destination === null ? '' : vm.product.destination;
             vm.product.sku = vm.product.sku === null ? '' : vm.product.sku;
             vm.product.gtin = vm.product.gtin === null ? '' : vm.product.gtin;
             vm.product.metaTitle = vm.product.metaTitle === null ? '' : vm.product.metaTitle;
@@ -373,6 +379,12 @@
                 }
                 if (vm.product.specialPriceEnd) {
                     vm.product.specialPriceEnd = new Date(vm.product.specialPriceEnd);
+                }
+                if (vm.product.departureDate) {
+                    vm.product.departureDate = new Date(vm.product.departureDate);
+                }
+                if (vm.product.returnDate) {
+                    vm.product.returnDate = new Date(vm.product.returnDate);
                 }
             });
         }

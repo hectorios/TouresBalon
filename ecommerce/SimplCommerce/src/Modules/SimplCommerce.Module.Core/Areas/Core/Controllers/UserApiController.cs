@@ -40,6 +40,16 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 query = query.Where(x => x.Email.Contains(searchOption.Email));
             }
 
+            if (!string.IsNullOrWhiteSpace(searchOption.IdNumber))
+            {
+                query = query.Where(x => x.IdNumber.Contains(searchOption.IdNumber));
+            }
+
+            if (!string.IsNullOrWhiteSpace(searchOption.PhoneNumber))
+            {
+                query = query.Where(x => x.PhoneNumber.Contains(searchOption.PhoneNumber));
+            }
+
            var users = await query.Take(5).Select(x => new
             {
                 x.Id,
@@ -76,6 +86,18 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 {
                     string fullName = search.FullName;
                     query = query.Where(x => x.FullName.Contains(fullName));
+                }
+
+                if (search.PhoneNumber != null)
+                {
+                    string phoneNumber = search.PhoneNumber;
+                    query = query.Where(x => x.PhoneNumber.Contains(phoneNumber));
+                }
+
+                if (search.IdNumber != null)
+                {
+                    string idNumber = search.IdNumber;
+                    query = query.Where(x => x.IdNumber.Contains(idNumber));
                 }
 
                 if (search.RoleId != null)
@@ -115,6 +137,7 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                     user.FullName,
                     user.CreatedOn,
                     user.IdNumber,
+                    user.PhoneNumber,
                     Roles = user.Roles.Select(x => x.Role.Name),
                     CustomerGroups = user.CustomerGroups.Select(x => x.CustomerGroup.Name)
                 });

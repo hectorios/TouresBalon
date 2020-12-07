@@ -48,7 +48,7 @@ namespace SimplCommerce.Module.Orders.Services
             _mediator = mediator;
         }
 
-        public async Task<Result<Order>> CreateOrder(long cartId, string paymentMethod, decimal paymentFeeAmount, OrderStatus orderStatus = OrderStatus.New)
+        public async Task<Result<Order>> CreateOrder(long cartId, string paymentMethod, decimal paymentFeeAmount, OrderStatus orderStatus = OrderStatus.Nueva)
         {
             var cart = await _cartRepository
                .Query()
@@ -131,7 +131,7 @@ namespace SimplCommerce.Module.Orders.Services
             return await CreateOrder(cartId, paymentMethod, paymentFeeAmount, shippingData.ShippingMethod, billingAddress, shippingAddress, orderStatus);
         }
 
-        public async Task<Result<Order>> CreateOrder(long cartId, string paymentMethod, decimal paymentFeeAmount, string shippingMethodName, Address billingAddress, Address shippingAddress, OrderStatus orderStatus = OrderStatus.New)
+        public async Task<Result<Order>> CreateOrder(long cartId, string paymentMethod, decimal paymentFeeAmount, string shippingMethodName, Address billingAddress, Address shippingAddress, OrderStatus orderStatus = OrderStatus.Nueva)
         {
             var cart = _cartRepository
                 .Query()
@@ -307,7 +307,7 @@ namespace SimplCommerce.Module.Orders.Services
 
         public void CancelOrder(Order order)
         {
-            order.OrderStatus = OrderStatus.Canceled;
+            order.OrderStatus = OrderStatus.Cancelada;
             order.LatestUpdatedOn = DateTimeOffset.Now;
 
             var orderItems = _orderItemRepository.Query().Include(x => x.Product).Where(x => x.Order.Id == order.Id);

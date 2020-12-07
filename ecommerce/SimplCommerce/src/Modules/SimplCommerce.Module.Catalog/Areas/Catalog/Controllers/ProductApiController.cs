@@ -114,6 +114,10 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
                 SpecialPrice = product.SpecialPrice,
                 SpecialPriceStart = product.SpecialPriceStart,
                 SpecialPriceEnd = product.SpecialPriceEnd,
+                DepartureDate = product.DepartureDate,
+                ReturnDate = product.ReturnDate,
+                Origin = product.Origin,
+                Destination = product.Destination,
                 IsFeatured = product.IsFeatured,
                 IsPublished = product.IsPublished,
                 IsCallForPricing =  product.IsCallForPricing,
@@ -309,6 +313,10 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
                 SpecialPrice = model.Product.SpecialPrice,
                 SpecialPriceStart = model.Product.SpecialPriceStart,
                 SpecialPriceEnd = model.Product.SpecialPriceEnd,
+                DepartureDate = model.Product.DepartureDate,
+                ReturnDate = model.Product.ReturnDate,
+                Origin = model.Product.Origin,
+                Destination = model.Product.Destination,
                 IsPublished = model.Product.IsPublished,
                 IsFeatured = model.Product.IsFeatured,
                 IsCallForPricing = model.Product.IsCallForPricing,
@@ -428,6 +436,10 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
             product.SpecialPrice = model.Product.SpecialPrice;
             product.SpecialPriceStart = model.Product.SpecialPriceStart;
             product.SpecialPriceEnd = model.Product.SpecialPriceEnd;
+            product.DepartureDate = model.Product.DepartureDate;
+            product.ReturnDate = model.Product.ReturnDate;
+            product.Origin = model.Product.Origin;
+            product.Destination = model.Product.Destination;
             product.BrandId = model.Product.BrandId;
             product.IsFeatured = model.Product.IsFeatured;
             product.IsPublished = model.Product.IsPublished;

@@ -13,7 +13,7 @@ namespace SimplCommerce.Module.Orders.Models
         {
             CreatedOn = DateTimeOffset.Now;
             LatestUpdatedOn = DateTimeOffset.Now;
-            OrderStatus = OrderStatus.New;
+            OrderStatus = OrderStatus.Nueva;
             IsMasterOrder = false;
         }
 
