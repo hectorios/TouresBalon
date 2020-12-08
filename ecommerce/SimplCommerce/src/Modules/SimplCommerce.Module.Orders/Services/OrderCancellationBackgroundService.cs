@@ -47,7 +47,7 @@ namespace SimplCommerce.Module.Orders.Services
         {
             var durationToCancel = DateTimeOffset.Now.AddMinutes(-5);
             var failedPaymentOrders = await orderRepository.Query().Where(x =>
-                (x.OrderStatus == OrderStatus.Cancelada)
+                (x.OrderStatus != OrderStatus.Nueva && x.OrderStatus != OrderStatus.Cancelada && x.OrderStatus != OrderStatus.Completa && x.OrderStatus != OrderStatus.Cerrada)
                 && x.LatestUpdatedOn < durationToCancel).ToListAsync();
 
             foreach (var order in failedPaymentOrders)
