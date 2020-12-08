@@ -157,7 +157,7 @@
                         <md-input-container class="md-block">
                             <div ng-repeat="category in vm.categories">
                                 <md-checkbox ng-checked="vm.product.categoryIds.indexOf(category.id) > -1" ng-click="vm.toggleCategories(category.id)">
-                                    Categorías
+                                    {{ category.name }}
                                 </md-checkbox>
                             </div>
                         </md-input-container>
