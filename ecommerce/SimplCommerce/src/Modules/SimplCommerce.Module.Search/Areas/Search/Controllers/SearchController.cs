@@ -65,7 +65,9 @@ namespace SimplCommerce.Module.Search.Areas.Search.Controllers
                 FilterOption = new FilterOption()
             };
 
-            var query = _productRepository.Query().Where(x => x.Name.Contains(searchOption.Query) && x.IsPublished && x.IsVisibleIndividually);
+            int searchById = 0;
+            bool isNumber = int.TryParse(searchOption.Query, out searchById);
+            var query = _productRepository.Query().Where(x => (x.Name.Contains(searchOption.Query) || (isNumber && x.Id == Convert.ToInt64(searchOption.Query)) || x.Description.Contains(searchOption.Query)) && x.IsPublished && x.IsVisibleIndividually);
 
             if (!query.Any())
             {
