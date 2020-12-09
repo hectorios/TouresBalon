@@ -170,29 +170,21 @@
                     </li>
                     @if (User.IsInRole("admin"))
                     {
-                        <li class="dropdown">
-                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["Promotions"] <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a ui-sref="cart-rules">@Localizer["Cart Price Rules"]</a></li>
-                                <li><a ui-sref="cart-rule-usages">@Localizer["Cart Price Rule Usages"]</a></li>
-                            </ul>
-                        </li>
+                        
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["Content"] <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a ui-sref="page">@Localizer["Pages"]</a></li>
                                 <li><a ui-sref="menus">@Localizer["Menus"]</a></li>
                                 <li><a ui-sref="widget">@Localizer["Widgets"]</a></li>
-                                <li><a ui-sref="news-categories">Manage News Categories</a></li>
-                                <li><a ui-sref="news-items">Manage News Items</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Localizer["System"] <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a ui-sref="themes">@Localizer["Themes"]</a></li>
-                                <li><a ui-sref="countries">@Localizer["Countries"]</a></li>
-                                <li><a ui-sref="states-provinces">@Localizer["States or Provinces"]</a></li>
+                                <li><a ui-sref="themes">Temas</a></li>
+                                <li><a ui-sref="countries">Países</a></li>
+                                <li><a ui-sref="states-provinces">Estados o Provincias</a></li>
                             </ul>
                         </li>
                     }
