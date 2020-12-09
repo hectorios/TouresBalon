@@ -12,6 +12,11 @@ namespace SimplCommerce.Module.Core.Areas.Core.ViewModels
 
         public string IdNumber { get; set; }
 
+        public bool HasPassport { get; set; }
+
+        public string PassportNumber { get; set; }
+
+
         public long? VendorId { get; set; }
 
         [Required(ErrorMessage = "The {0} field is required.")]

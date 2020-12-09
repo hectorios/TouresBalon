@@ -24,6 +24,10 @@ namespace SimplCommerce.Module.Core.Models
 
         public string IdNumber { get; set; }
 
+        public bool HasPassport { get; set; }
+
+        public string PassportNumber { get; set; }
+
         public long? VendorId { get; set; }
 
         public bool IsDeleted { get; set; }

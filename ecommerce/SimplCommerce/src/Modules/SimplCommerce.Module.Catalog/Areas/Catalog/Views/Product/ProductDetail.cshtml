@@ -138,7 +138,7 @@
                         @if (variant.StockTrackingIsEnabled && variant.StockQuantity <= 0)
                         {
                             <div class="out-of-stock">
-                                <span class="label label-danger">@Localizer["Out of stock"]</span>
+                                <span class="label label-danger">No Disponible</span>
                             </div>
                         }
                         <div class="add-to-cart">
@@ -149,26 +149,7 @@
                                     <input type="text" class="quantity-field" readonly="readonly" name="qty" value="1">
                                     <button type="button" class="quantity-button" name="add" value="+">+</button>
                                 </div>
-                                <button type="button" disabled="@(!variant.IsAllowToOrder || (variant.StockTrackingIsEnabled && variant.StockQuantity <= 0))" class="btn btn-lg btn-add-cart">@Localizer["Add to cart"]</button>
-                                <div>
-                                    <ul class="list-inline add-to-lists">
-                                        <li class="wishlist-in">
-                                            <i class="fa fa-heart"></i>
-                                            @if (SignInManager.IsSignedIn(User))
-                                            {
-                                                <a href="#" class="add-to-wishlist">@Localizer["Add to Wishlist"]</a>
-                                            }
-                                            else
-                                            {
-                                                <a asp-area="Catalog" asp-controller="Account" asp-action="Login" asp-route-returnurl="@($"{Context.Request.Path}{Context.Request.QueryString}")">@Localizer["Add to Wishlist"]</a>
-                                            }
-                                        </li>
-                                        <li class="compare-in">
-                                            <i class="fa fa-exchange"></i>
-                                            <a href="#" class="add-to-comparison">@Localizer["Add to Compare"]</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <button type="button" disabled="@(!variant.IsAllowToOrder || (variant.StockTrackingIsEnabled && variant.StockQuantity <= 0))" class="btn btn-lg btn-add-cart">Añadir al Carrito</button>
                             </form>
                         </div>
                     </div>
@@ -197,7 +178,7 @@
                 if (Model.StockTrackingIsEnabled && Model.StockQuantity <= 0)
                 {
                     <div class="out-of-stock">
-                        <span class="label label-danger">@Localizer["Out of stock"]</span>
+                        <span class="label label-danger">No Disponible</span>
                     </div>
                 }
                 <div class="add-to-cart">
@@ -208,26 +189,7 @@
                             <input type="text" class="quantity-field" readonly="readonly" name="qty" value="1">
                             <button type="button" class="quantity-button" name="add" value="+">+</button>
                         </div>
-                        <button type="button" disabled="@(!Model.IsAllowToOrder || (Model.StockTrackingIsEnabled && Model.StockQuantity <= 0))" class="btn btn-lg btn-add-cart">@Localizer["Add to cart"]</button>
-                        <div>
-                            <ul class="list-inline add-to-lists">
-                                <li class="wishlist-in">
-                                    <i class="fa fa-heart"></i>
-                                    @if (SignInManager.IsSignedIn(User))
-                                    {
-                                        <a href="#" class="add-to-wishlist">@Localizer["Add to Wishlist"]</a>
-                                    }
-                                    else
-                                    {
-                                        <a asp-area="Catalog" asp-controller="Account" asp-action="Login" asp-route-returnurl="@($"{Context.Request.Path}{Context.Request.QueryString}")">@Localizer["Add to Wishlist"]</a>
-                                    }
-                                </li>
-                                <li class="compare-in">
-                                    <i class="fa fa-exchange"></i>
-                                    <a href="#" class="add-to-comparison">@Localizer["Add to Compare"]</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <button type="button" disabled="@(!Model.IsAllowToOrder || (Model.StockTrackingIsEnabled && Model.StockQuantity <= 0))" class="btn btn-lg btn-add-cart">Añadir al Carrito</button>
                     </form>
                 </div>
             }

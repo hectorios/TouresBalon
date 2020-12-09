@@ -163,6 +163,8 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 Id = user.Id,
                 FullName = user.FullName,
                 IdNumber = user.IdNumber,
+                HasPassport = user.HasPassport,
+                PassportNumber = user.PassportNumber,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 VendorId = user.VendorId,
@@ -182,6 +184,8 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
                 {
                     UserName = model.Email,
                     IdNumber = model.IdNumber,
+                    HasPassport = model.HasPassport,
+                    PassportNumber = model.PassportNumber,
                     Email = model.Email,
                     FullName = model.FullName,
                     PhoneNumber = model.PhoneNumber,
@@ -236,6 +240,8 @@ namespace SimplCommerce.Module.Core.Areas.Core.Controllers
 
                 user.Email = model.Email;
                 user.IdNumber = model.IdNumber;
+                user.HasPassport = model.HasPassport;
+                user.PassportNumber = model.PassportNumber;
                 user.UserName = model.Email;
                 user.FullName = model.FullName;
                 user.PhoneNumber = model.PhoneNumber;
